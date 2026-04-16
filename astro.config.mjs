@@ -6,8 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   output: 'static', // Explicitly specify static output (which is also the default)
-  site: 'https://cuchulain.github.io',
-  base: '/saman.jancejka.cz', // Set the base path for GitHub Pages
+  site: 'https://saman.jancejka.cz',
   // Enable built-in image optimization with specific settings
   image: {
     service: {
