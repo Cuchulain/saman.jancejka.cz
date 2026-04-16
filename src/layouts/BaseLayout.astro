@@ -14,19 +14,19 @@ interface Props {
   author?: string;
 }
 
-const { 
-  title, 
-  description = "A minimalist blog template focusing on clean typography and distraction-free reading experience.", 
+const {
+  title,
+  description = "A minimalist blog template focusing on clean typography and distraction-free reading experience.",
   image = "/og-image.png",
   type = "website",
   publishedDate,
   modifiedDate,
-  author = "Brook Team"
+  author = "Jan Čejka"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = image.startsWith('/') ? new URL(image, Astro.site) : image;
-const siteName = "Brook Blog";
+const siteName = "Jan Čejka";
 
 // Strukturierte Daten (JSON-LD) für bessere SEO
 const jsonLDWebsite = {
@@ -68,7 +68,7 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Brook</title>
+    <title>{title} | Jan Čejka</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
@@ -92,7 +92,7 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
       // Re-apply after view transitions
       document.addEventListener('astro:after-swap', applyTheme);
     </script>
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
@@ -109,10 +109,10 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImageURL} />
-    
+
     <!-- Strukturierte Daten für SEO -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
-    
+
     <style is:inline>
       body {
         font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -126,15 +126,14 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
     <div class="bg-white dark:bg-black transition-colors duration-300">
       <header class="mx-auto max-w-4xl py-8">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-2xl font-semibold" transition:animate="fade">Brook2</a>
+          <a href="/" class="text-2xl font-semibold" transition:animate="fade">Jan Čejka</a>
 
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center gap-6">
             <nav class="flex items-center gap-6">
-              <a href="/" class="nav-link">Home</a>
-              <a href="/journal" class="nav-link">Journal</a>
-              <a href="/about" class="nav-link">About</a>
-              <a href="/styleguide" class="nav-link">Styleguide</a>
+              <a href="/" class="nav-link">Domů</a>
+              <a href="/journal" class="nav-link">Zápisník</a>
+              <a href="/about" class="nav-link">O mně</a>
             </nav>
             <DarkModeToggle />
           </div>
@@ -147,7 +146,7 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
               type="button"
               class="inline-flex items-center justify-center p-2 bg-white dark:bg-black text-gray-900 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 focus:outline-none border-0"
               aria-expanded="false"
-              aria-label="Toggle menu"
+              aria-label="Přepnout menu"
             >
             <svg id="menu-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -161,27 +160,26 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
 
         <!-- Mobile Navigation -->
         <nav id="mobile-menu" class="hidden md:hidden mt-6 pt-4 border-t border-gray-200 dark:border-gray-800 space-y-1">
-          <a href="/" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">Home</a>
-          <a href="/journal" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">Journal</a>
-          <a href="/about" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">About</a>
+          <a href="/" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">Domů</a>
+          <a href="/journal" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">Zápisník</a>
+          <a href="/about" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">O mně</a>
           <a href="/styleguide" class="block px-3 py-2 text-sm text-gray-900 dark:text-gray-300 hover:underline">Styleguide</a>
         </nav>
       </header>
-      
+
       <main class="py-10" transition:animate="fade">
         <slot />
       </main>
-      
+
       <footer class="max-w-4xl mx-auto py-8 border-t border-gray-200 dark:border-gray-800 mt-12">
           <div class="flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-sm text-gray-500 dark:text-gray-500">
-              Made by <a href="https://templatedeck.com" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 dark:hover:text-gray-100">templatedeck.com</a>
+              Vytvořil  <a href="https://jancejka.cz" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 dark:hover:text-gray-100">Jan Čejka</a>
             </div>
             <nav class="flex items-center gap-4">
-              <a href="/" class="nav-link-footer">Home</a>
-              <a href="/journal" class="nav-link-footer">Journal</a>
-              <a href="/about" class="nav-link-footer">About</a>
-              <a href="/styleguide" class="nav-link-footer">Styleguide</a>
+              <a href="/" class="nav-link-footer">Domů</a>
+              <a href="/journal" class="nav-link-footer">Zápisník</a>
+              <a href="/about" class="nav-link-footer">O mně</a>
             </nav>
           </div>
       </footer>

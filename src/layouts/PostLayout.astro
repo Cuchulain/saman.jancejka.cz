@@ -32,18 +32,18 @@ const publishDate = new Date(date);
   <article id="main-content">
     <header class="max-w-3xl mx-auto mb-10">
       <div class="text-gray-500 text-sm mb-2">
-        <time datetime={publishDate.toISOString()}>{formatDate(date)}</time> • <span aria-label={`${readingTime} minute read`}>{readingTime} min read</span>
+        <time datetime={publishDate.toISOString()}>{formatDate(date)}</time> • <span aria-label={`Čtení: ${readingTime} minut`}>{readingTime} min čtení</span>
       </div>
       <h1 class="text-5xl mb-6" transition:name={`title-${slug}`}>{title}</h1>
       {excerpt && <p class="text-xl text-gray-500">{excerpt}</p>}
 
       {tags && tags.length > 0 && (
-        <div class="mt-4 mb-4 flex flex-wrap gap-2" aria-label="Tags">
+        <div class="mt-4 mb-4 flex flex-wrap gap-2" aria-label="Štítky">
           {tags.map((tag) => (
             <a
               href={`/tags/${tag}`}
               class="tag"
-              aria-label={`View all posts tagged ${tag}`}
+              aria-label={`Zobrazit všechny příspěvky se štítkem ${tag}`}
             >
               {tag}
             </a>

@@ -10,13 +10,13 @@ interface Props {
   title?: string;
 }
 
-const { 
-  posts, 
-  showImages = true, 
-  showExcerpt = true, 
-  showSeparators = false, 
+const {
+  posts,
+  showImages = true,
+  showExcerpt = true,
+  showSeparators = false,
   showTags = true,
-  title 
+  title
 } = Astro.props;
 ---
 
@@ -24,17 +24,17 @@ const {
   {title && (
     <h2 id="post-list-title" class="text-2xl font-semibold mb-6">{title}</h2>
   )}
-  
+
   <div class="border-b border-gray-200 dark:border-gray-800" role="feed" aria-busy="false">
     {posts.length === 0 ? (
-      <p class="py-8 text-gray-500 text-center">Keine Beiträge gefunden.</p>
+      <p class="py-8 text-gray-500 text-center">Žádné příspěvky nenalezeny.</p>
     ) : (
       posts.map((post, index) => (
-        <PostCard 
-          post={post} 
-          showImage={showImages} 
-          showExcerpt={showExcerpt} 
-          showTags={showTags} 
+        <PostCard
+          post={post}
+          showImage={showImages}
+          showExcerpt={showExcerpt}
+          showTags={showTags}
         />
       ))
     )}

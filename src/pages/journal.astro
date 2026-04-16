@@ -17,17 +17,17 @@ const posts = sortedPosts.map(post => ({
 }));
 ---
 
-<BaseLayout title="Journal">
+<BaseLayout title="Zápisník">
   <div class="max-w-3xl mx-auto">
     <header class="mb-12 text-center" transition:animate="fade">
-      <h1 class="text-5xl mb-4">Journal</h1>
+      <h1 class="text-5xl mb-4">Zápisník</h1>
       <p class="text-xl text-muted-foreground">
-        Explore our latest thoughts, ideas, and stories
+        Prozkoumejte všechny zápisky, myšlenky a příběhy
       </p>
     </header>
 
     <div transition:animate="fade">
-      <PostListWithThumbnails posts={posts} showTags={true} title="All Posts" />
+      <PostListWithThumbnails posts={posts} showTags={true} title="Všechny příspěvky" />
     </div>
   </div>
 </BaseLayout>

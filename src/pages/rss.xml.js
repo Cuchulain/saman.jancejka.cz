@@ -3,15 +3,15 @@ import { getCollection } from 'astro:content';
 
 export async function GET(context) {
   const posts = await getCollection('posts');
-  
+
   // Sort posts by date (most recent first)
-  const sortedPosts = posts.sort((a, b) => 
+  const sortedPosts = posts.sort((a, b) =>
     new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
   );
-  
+
   return rss({
-    title: 'Brook Blog',
-    description: 'A minimalist blog template focusing on clean typography and distraction-free reading experience',
+    title: 'Jan Čejka — Šamanismus & Léčení',
+    description: 'Osobní blog o šamanismu, energetickém léčení a komunikaci s přírodou.',
     site: context.site,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
@@ -19,6 +19,6 @@ export async function GET(context) {
       description: post.data.excerpt,
       link: `/posts/${post.id}/`,
     })),
-    customData: `<language>en-us</language>`,
+    customData: `<language>cs</language>`,
   });
 }
