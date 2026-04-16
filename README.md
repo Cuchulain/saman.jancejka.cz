@@ -1,199 +1,115 @@
-<!-- templatedeck-backlink -->
-> 🎨 **BROOK 2** is part of the [TemplateDeck](https://templatedeck.com) collection — handcrafted HTML and Astro templates for developers and designers.
->
-> 📥 **[Download free on TemplateDeck](https://templatedeck.com/templates/brook2)** · 🌐 **[Browse all templates](https://templatedeck.com)**
+# Jan Čejka — Šamanismus & Léčení
 
----
+Osobní blog Jana Čejky o šamanismu, energetickém léčení a komunikaci s přírodou. Jan se věnuje léčitelství od svých 17 let (nar. 1971) a propojuje duchy přírodního světa s moderním myšlením.
 
-# Brook - A Minimalist Blog Template Built with Astro
+**Web:** [jancejka.cz](https://jancejka.cz)
 
-![Brook Blog](./cover.png)
+## Témata
 
-**[Live Demo](https://brook2-astro-blog.vercel.app/)**
+- Šamanismus — praxe, tradice, obřady, cesty
+- Léčení a uzdravování — energetická léčba, práce s tělem a duší
+- Komunikace s přírodou — duchové přírody, elementy, rostliny, zvířata
+- Harmonizace prostor — čištění energií, posvátná místa
+- Síť světelných sloupů — energetická peer-to-peer síť sloupů vyzařujících léčení a lásku
 
-Brook is a minimalist blog template for developers and writers that focuses on clean typography and a distraction-free reading experience.
+## ✨ Funkce
 
-## ✨ Features
+- Minimalistický design zaměřený na čitelnost
+- Plná podpora dark/light mode (třída `.dark` na `<html>`)
+- Responzivní layout pro všechna zařízení
+- Content Collections s typovým schématem (Zod)
+- Podpora Markdown a MDX
+- View Transitions (Astro ClientRouter)
+- Tagovací systém s filtrací příspěvků
+- SEO — meta tagy, Open Graph, JSON-LD
+- RSS kanál (`/rss.xml`)
+- Sitemap
+- Vercel Analytics
+- Self-hosted fonty Geist Sans & Mono
 
-- **Clean Minimalist Design**: Elegant layout focused on readability and content
-- **Full Dark/Light Mode**: Complete support for both modes with smooth transitions
-- **Responsive Design**: Optimized for all device sizes
-- **Content Collections**: Organized content using Astro's content collections
-- **Markdown/MDX Support**: Write your content in Markdown with optional JSX support
-- **Image Optimization**: Automatic image processing and optimization
-- **View Transitions**: Smooth page transitions with Astro's view transitions API
-- **Tagging System**: Categorize and filter posts using tags
-- **Code Syntax Highlighting**: Beautiful syntax highlighting for code blocks
-- **SEO Optimized**: Built-in meta tags and structured data (JSON-LD)
-- **Type-Safe**: Fully typed with TypeScript
-- **Reading Time**: Automatic calculation of estimated reading time
-- **Accessible**: Built with accessibility in mind
-- **Fast Performance**: Optimized for web vitals with minimal JavaScript
-- **RSS Feed**: Auto-generated RSS feed
-
-## 🚀 Getting Started
+## 🚀 Vývoj
 
 ```bash
-# Clone the repository
-git clone https://github.com/holger1411/astro-brook.git
-cd astro-brook
-
-# Install dependencies
-pnpm install
-
-# Start the development server
-pnpm dev
+pnpm dev        # dev server → http://localhost:4321
+pnpm build      # produkční build
+pnpm preview    # náhled buildu
 ```
 
-Visit [http://localhost:4321](http://localhost:4321) to see the result.
-
-## 📁 Project Structure
+## 📁 Struktura projektu
 
 ```
-├── public/               # Static assets
-├── src/
-│   ├── assets/           # Optimized assets (images, etc.)
-│   ├── components/       # Reusable components
-│   │   ├── PostCard.astro      # Blog post preview card
-│   │   ├── PostList.astro      # List of blog posts
-│   │   ├── PostNavigation.astro # Next/previous post navigation
-│   │   └── ui/                 # UI components
-│   ├── content/          # Content directory (using Astro Content Collections)
-│   │   └── posts/        # Blog posts (Markdown/MDX)
-│   ├── layouts/          # Astro layouts
-│   │   ├── BaseLayout.astro    # Base layout
-│   │   └── PostLayout.astro    # Layout for blog posts
-│   ├── pages/            # Astro pages
-│   │   ├── about.astro         # About page
-│   │   ├── index.astro         # Homepage
-│   │   ├── journal.astro       # Blog overview page
-│   │   ├── posts/[slug].astro    # Dynamic blog post route
-│   │   └── tags/[tag].astro    # Tag-based filtering
-│   ├── styles/           # Stylesheets
-│   └── utils/            # Helper functions and utilities
-└── astro.config.mjs      # Astro configuration
+public/
+  fonts/             # Self-hosted Geist Sans + Mono (woff2)
+  images/            # Obrázky příspěvků
+src/
+  content/
+    posts/           # Příspěvky (.md / .mdx)
+  components/        # Znovupoužitelné .astro komponenty
+  layouts/
+    BaseLayout.astro # SEO/head wrapper
+    PostLayout.astro # Wrapper příspěvku (prev/next navigace)
+  pages/
+    index.astro      # Posledních 5 příspěvků
+    journal.astro    # Všechny příspěvky s náhledy
+    about.astro      # O autorovi
+    posts/[slug].astro
+    tags/[tag].astro
+    rss.xml.js
+  styles/
+    global.css       # Tailwind v4 + CSS utility třídy (@layer components)
+  utils/
+    date.js
+    optimizeImagePath.ts
+  content.config.ts  # Schéma Content Collections
+astro.config.mjs
 ```
 
-## 📝 Adding Content
+## 📝 Přidání příspěvku
 
-### Creating a New Blog Post
+Vytvořit soubor `.md` nebo `.mdx` v `src/content/posts/`:
 
-1. Create a new `.md` or `.mdx` file in the `src/content/posts/` directory
-2. Add frontmatter metadata:
-
-```mdx
+```md
 ---
-title: My New Blog Post
-date: 2025-03-01
-excerpt: A short description of the blog post
-image: /images/my-image.jpg
-tags: [tag1, tag2]
+title: Název příspěvku
+date: 2025-11-22
+excerpt: Krátký popis příspěvku
+image: /images/nazev.jpg
+tags: [šamanismus, léčení]
 ---
 
-Here goes the content of the blog post.
-
-## A Heading
-
-More text and content...
+Obsah příspěvku...
 ```
 
-### Images
+> **Pozor:** `date` musí být YAML datum **bez uvozovek**, jinak `z.date()` vyhodí chybu parsování.
 
-For images in your blog posts:
+Obrázky umístit do `public/images/` a odkazovat jako `/images/nazev.jpg`.
 
-1. Place images in the `public/images/` directory
-2. Reference them in your frontmatter and content using the path `/images/my-image.jpg`
+### Doporučené tagy
 
-## 🎨 Customization
-
-### Theme Customization
-
-The color palette and other design elements can be customized in the `tailwind.config.mjs` file and `src/styles/global.css`:
-
-```javascript
-// tailwind.config.mjs
-export default {
-  theme: {
-    extend: {
-      colors: {
-        // Customize colors here
-      },
-      typography: {
-        // Typography settings
-      }
-    }
-  }
-}
+```
+šamanismus, léčení, uzdravování, příroda, duchové, elementy, harmonizace,
+světelné-sloupy, síť-sloupů, meditace, rituály, energie, prostor, bydlení
 ```
 
-### Layout Customization
+## 🎨 Tailwind CSS v4
 
-The main layouts are located in the `src/layouts/` directory.
+Konfigurace výhradně přes Vite plugin v `astro.config.mjs` — **žádný `tailwind.config.ts`**.  
+Dark mode: `@variant dark (&:where(.dark, .dark *));` v `global.css`.
 
-## 🧩 Technology Stack
+Utility třídy definované v `src/styles/global.css` (`@layer components`):  
+`.btn-primary`, `.btn-secondary`, `.btn-sm`, `.btn-lg`, `.card`, `.tag`, `.nav-link`, `.feature-image`, `.container-sm/md/lg/xl`, `.post-nav-link`
 
-- [Astro](https://astro.build/) - Modern web framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Astro Content Collections](https://docs.astro.build/en/guides/content-collections/) - Content management
-- [MDX](https://mdxjs.com/) - Markdown with JSX (optional)
+## 🧩 Technologie
 
-## 📦 Dependencies
+- [Astro 6](https://astro.build/) — statický výstup (`output: 'static'`)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/) — `@tailwindcss/vite`
+- [MDX](https://mdxjs.com/) — `@astrojs/mdx`
+- [date-fns 4](https://date-fns.org/)
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+- [@astrojs/rss](https://docs.astro.build/en/guides/rss/)
+- [@vercel/analytics](https://vercel.com/analytics)
 
-- `@tailwindcss/vite` - Tailwind CSS v4 integration
-- `@astrojs/mdx` - MDX support
-- `@astrojs/sitemap` - Sitemap generation
-- `@astrojs/rss` - RSS feed generation
-- `date-fns` - Date formatting
+## 🚀 Nasazení
 
-## 🛠️ Development
-
-```bash
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-
-# Preview production build
-pnpm preview
-```
-
-## 🚀 Deployment
-
-This project can be deployed on any platform that supports Astro:
-
-- [Netlify](https://www.netlify.com/)
-- [Vercel](https://vercel.com/)
-- [GitHub Pages](https://pages.github.com/)
-- [Cloudflare Pages](https://pages.cloudflare.com/)
-- [Deno Deploy](https://deno.com/deploy)
-
-For Netlify (recommended):
-
-```bash
-pnpm install -g netlify-cli
-netlify deploy
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## ❓ Support
-
-If you have any questions or suggestions, please open an issue or start a discussion.
-
----
-
-Built with ❤️ using Astro, TypeScript, and Tailwind CSS.
+Web je nasazen na GitHub Pages s vlastní doménou (`CNAME: jancejka.cz`). Astro generuje statický výstup — lze nasadit na libovolnou statickou platformu (GitHub Pages, Vercel, Netlify, Cloudflare Pages).
