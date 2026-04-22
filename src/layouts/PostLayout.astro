@@ -1,15 +1,16 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import PostNavigation from '../components/PostNavigation.astro';
+import { Image, getImage } from 'astro:assets';
 import { formatDate } from '../utils/date';
-import { optimizeImagePath } from '../utils/optimizeImagePath';
 
 const { frontmatter, headings, prevPost, nextPost } = Astro.props;
 const { title, date, tags, image, excerpt } = frontmatter;
 const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
 
-// Ensure image path is optimized
-const optimizedImagePath = image ? optimizeImagePath(image) : null;
+const ogImage = image
+  ? await getImage({ src: image, width: 1200, height: 630, format: 'jpeg', quality: 90 })
+  : null;
 
 // Estimated reading time
 const WORDS_PER_MINUTE = 225;
@@ -25,7 +26,7 @@ const publishDate = new Date(date);
 <BaseLayout
   title={title}
   description={excerpt}
-  image={optimizedImagePath || image}
+  image={ogImage?.src}
   type="article"
   publishedDate={publishDate}
 >
@@ -52,16 +53,16 @@ const publishDate = new Date(date);
       )}
     </header>
 
-    {optimizedImagePath && (
+    {image && (
       <div class="max-w-4xl mx-auto mt-2 mb-10 feature-image" transition:name={`image-${slug}`}>
-        <img
-          src={optimizedImagePath}
+        <Image
+          src={image}
           alt={`Featured image for "${title}"`}
           class="w-full h-full object-cover"
+          widths={[600, 900, 1200]}
+          sizes="(max-width: 768px) 100vw, 1200px"
+          quality={85}
           loading="eager"
-          decoding="async"
-          width="1200"
-          height="675"
         />
       </div>
     )}

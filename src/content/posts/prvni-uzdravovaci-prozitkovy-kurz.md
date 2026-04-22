@@ -2,7 +2,7 @@
 title: První uzdravovací prožitkový kurz
 date: 2014-07-24
 excerpt: V sobotu proběhne první veřejný prožitkový kurz Vědomého uzdravení. Mé zkušenosti s přirozeným léčením — včetně toho, jak jsem si sám vyléčil dnu — nabízím i ostatním lidem, kteří se marně pokoušejí uzdravit s pomocí západní medicíny.
-image: /images/strom-poznani.jpg
+image: ../../assets/images/strom-poznani.jpg
 tags: [léčení, uzdravování, zdraví]
 ---
 

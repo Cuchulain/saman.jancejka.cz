@@ -2,7 +2,7 @@
 title: Magie Vědomého Uzdravení
 date: 2014-09-25
 excerpt: Napsal jsem knihu o magii a zdraví. Návod, jak se uzdravit pomocí magie — tak jako čarodějky v knihách, ale v praxi a pro každého z nás.
-image: /images/mvu-ctverec.jpg
+image: ../../assets/images/mvu-ctverec.jpg
 tags: [léčení, uzdravování, magie, zdraví]
 ---
 

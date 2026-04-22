@@ -3,11 +3,11 @@ import { glob } from 'astro/loaders';
 
 const postsCollection = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     date: z.date(),
     excerpt: z.string(),
-    image: z.string().optional(),
+    image: image().optional(),
     tags: z.array(z.string()).default([]),
   }),
 });

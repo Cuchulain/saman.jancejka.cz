@@ -2,7 +2,7 @@
 title: Šambala v horách
 date: 2013-07-27
 excerpt: Záznam šamanského putování z 30. června 2012. Cesta přes Dolní svět do Šambaly — místa bílých zářících bytostí ukrytého v horách, kde jsem otevřel bránu pro všechny bytosti, které ji potřebují.
-image: /images/sambala.jpg
+image: ../../assets/images/sambala.jpg
 tags: [šamanismus, meditace, duchové, rituály]
 ---
 

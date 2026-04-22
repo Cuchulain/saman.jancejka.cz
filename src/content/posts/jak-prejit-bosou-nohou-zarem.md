@@ -2,7 +2,7 @@
 title: Jak přejít bosou nohou žárem?
 date: 2013-05-24
 excerpt: Přešli jste někdy přes žhavé uhlíky? Naboso? Firewalking je víc než fyzický výkon — je to hluboká transformace, která mění váš pohled na to, co je vůbec možné.
-image: /images/firewalking.jpg
+image: ../../assets/images/firewalking.jpg
 tags: [rituály, transformace, léčení, šamanismus]
 ---
 

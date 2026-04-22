@@ -1,6 +1,6 @@
 ---
+import { Image } from 'astro:assets';
 import { formatDate } from '../utils/date';
-import { optimizeImagePath } from '../utils/optimizeImagePath';
 
 interface Props {
   post: {
@@ -10,7 +10,7 @@ interface Props {
       title: string;
       date: string;
       excerpt: string;
-      image?: string;
+      image?: any;
       tags?: string[];
     };
   };
@@ -21,9 +21,6 @@ interface Props {
 
 const { post, showImage = true, showExcerpt = true, showTags = true } = Astro.props;
 const { title, date, excerpt, image, tags } = post.frontmatter;
-
-// Ensure image path is optimized
-const optimizedImagePath = image ? optimizeImagePath(image) : null;
 ---
 
 <article class="border-t border-gray-200 dark:border-gray-800 py-4 xl:py-8" transition:name={`post-${post.id}`}>
@@ -56,20 +53,20 @@ const optimizedImagePath = image ? optimizeImagePath(image) : null;
       </div>
     )}
 
-    {showImage && optimizedImagePath && (
+    {showImage && image && (
       <a
         href={post.url}
         class="block feature-image focus-ring"
         aria-label={`View ${title} article`}
       >
-        <img
-          src={optimizedImagePath}
+        <Image
+          src={image}
           alt={`Preview image for ${title}`}
           class="w-full h-full object-cover transition-transform hover:scale-105"
+          width={800}
+          height={450}
+          quality={85}
           loading="lazy"
-          decoding="async"
-          width="800"
-          height="450"
         />
       </a>
     )}

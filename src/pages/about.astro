@@ -1,12 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image, getImage } from 'astro:assets';
+import portrait from '../assets/images/portret-2025-07-16-125057.jpg';
+import drum from '../assets/images/bigstock-shaman-drum-44041465.jpg';
+import shamanBanner from '../assets/images/bigstock-Portrait-of-a-shaman-with-a-dr-58717124.jpg';
+import mvuCover from '../assets/images/mvu-ctverec.jpg';
+
+const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format: 'jpeg', quality: 90 });
 ---
 
 <BaseLayout
   title="O mně"
   description="Jan Čejka — léčitel, šaman a průvodce světem energie. Věnuji se léčitelství od svých 17 let."
   author="Jan Čejka"
-  image="/images/portret-2025-07-16-125057.jpg"
+  image={ogImage.src}
 >
   <!-- ═══════════════════════════════════════════
        HERO — portrét + úvod
@@ -38,13 +45,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="portrait-wrapper relative w-52 h-52 md:w-64 md:h-64" style="overflow:visible">
 
             <!-- Buben: centrován přes translate, přetéká mimo wrapper -->
-            <img
-              src="/images/bigstock-shaman-drum-44041465.jpg"
+            <Image
+              src={drum}
               alt=""
               aria-hidden="true"
               class="drum-bg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain pointer-events-none select-none opacity-[0.05] dark:opacity-[0.15] dark:invert dark:[mix-blend-mode:screen]"
+              width={600}
+              height={600}
+              quality={70}
+              loading="eager"
               style="z-index:0"
-            >
+            />
 
             <!-- Prsteny: vnější div centruje (translate), vnitřní div jen rotuje -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-[240px] h-[240px] md:w-[288px] md:h-[288px]" style="z-index:1">
@@ -59,12 +70,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
             <!-- Portrét: vyplňuje wrapper -->
             <div class="w-full h-full rounded-full overflow-hidden shadow-2xl shadow-ritual/15 ring-2 ring-ritual/20" style="position:relative; z-index:2">
-              <img
-                src="/images/portret-2025-07-16-125057.jpg"
+              <Image
+                src={portrait}
                 alt="Jan Čejka — fotografie"
                 class="w-full h-full object-cover object-center"
+                width={256}
+                height={256}
+                quality={90}
                 loading="eager"
-              >
+              />
             </div>
 
           </div>
@@ -79,12 +93,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ═══════════════════════════════════════════ -->
   <div class="max-w-5xl mx-auto px-4 my-10 md:my-14" transition:animate="fade">
     <div class="relative h-56 md:h-72 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
-      <img
-        src="/images/bigstock-Portrait-of-a-shaman-with-a-dr-58717124.jpg"
+      <Image
+        src={shamanBanner}
         alt="Šaman s pochodní a peřím"
         class="w-full h-full object-cover"
+        widths={[600, 900, 1200]}
+        sizes="(max-width: 768px) 100vw, 1200px"
+        quality={85}
+        loading="lazy"
         style="object-position: center 15%;"
-      >
+      />
       <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center">
         <blockquote class="px-8 md:px-14 max-w-sm md:max-w-md">
           <p class="text-xl md:text-2xl text-white font-medium leading-snug italic">
@@ -116,11 +134,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-mystic dark:text-mystic mb-8">Publikace</h2>
       <div class="flex flex-col sm:flex-row gap-8 items-start sm:items-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800">
         <div class="flex-shrink-0">
-          <img
-            src="/images/mvu-ctverec.jpg"
+          <Image
+            src={mvuCover}
             alt="Magie Vědomého Uzdravení — obálka"
             class="w-36 h-36 object-cover rounded-xl shadow-lg"
-          >
+            width={144}
+            height={144}
+            quality={85}
+            loading="lazy"
+          />
         </div>
         <div>
           <p class="font-mono text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Jan Čejka © 2014</p>

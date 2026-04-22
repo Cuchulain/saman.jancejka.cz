@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostList from '../components/PostList.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import shamanicHeart from '../assets/images/bigstock-shamanic-heart-44039758.jpg';
+import profilovka from '../assets/images/profilovka.jpg';
 
 // Get all blog posts and sort them by date
 const allPosts = await getCollection('posts');
@@ -27,11 +30,15 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
 
       <!-- Šamanské srdce jako dekorativní pozadí -->
       <div class="hero-heart absolute pointer-events-none select-none" aria-hidden="true">
-        <img
-          src="/images/bigstock-shamanic-heart-44039758.jpg"
+        <Image
+          src={shamanicHeart}
           alt=""
           class="w-[420px] h-[420px] md:w-[560px] md:h-[560px] object-contain opacity-[0.12] [mix-blend-mode:multiply] dark:opacity-[0.18] dark:invert dark:[mix-blend-mode:screen]"
-        >
+          widths={[420, 560]}
+          sizes="(max-width: 768px) 420px, 560px"
+          quality={75}
+          loading="eager"
+        />
       </div>
 
       <h1 class="text-7xl mb-8 font-bold relative z-10">Šamanismus &amp; Léčení</h1>
@@ -39,7 +46,7 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
         Průvodce světem šamanismu, energetického léčení a komunikace s přírodou. Věnuji se léčitelství již {new Date().getFullYear() - 1987} let a propojuji duchy přírodního světa s moderním myšlením.
       </p>
       <div class="flex flex-wrap gap-4 justify-center relative z-10">
-        <a href="/journal" class="btn-primary btn-lg tracking-wide no-underline hover:no-underline transform transition-all duration-300 hover:scale-105 hover:shadow-[0_3.5rem_5rem_rgba(21,21,21,0.3)] shadow-[0_3rem_4rem_rgba(21,21,21,0.25)] dark:bg-white dark:text-black dark:hover:bg-gray-100">
+        <a href="/journal" class="btn-primary btn-lg tracking-wide no-underline hover:no-underline transform transition-all duration-300 hover:scale-105 hover:shadow-[0_3.5rem_5rem_rgba(21,21,21,0.3)] shadow-[0_3rem_4rem_rgba(21,21,21,0.25)]">
           Číst zápisník
         </a>
         <a href="/about" class="btn-secondary btn-lg tracking-wide no-underline hover:no-underline">
@@ -63,12 +70,15 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
       <a href="/about" class="group flex flex-col sm:flex-row items-center sm:items-start gap-6 p-7 rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40 hover:border-ritual/30 dark:hover:border-ritual/20 transition-all duration-300 no-underline hover:no-underline hover:shadow-md">
         <div class="flex-shrink-0">
           <div class="w-20 h-20 rounded-full overflow-hidden ring-2 ring-ritual/20 shadow-md group-hover:ring-ritual/40 transition-all duration-300">
-            <img
-              src="/images/profilovka.jpg"
+          <Image
+              src={profilovka}
               alt="Jan Čejka"
               class="w-full h-full object-cover object-center"
+              width={80}
+              height={80}
+              quality={85}
               loading="lazy"
-            >
+            />
           </div>
         </div>
         <div class="text-center sm:text-left">
