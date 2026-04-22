@@ -13,14 +13,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ═══════════════════════════════════════════ -->
   <section class="about-hero relative overflow-hidden py-16 md:py-24">
 
-    <!-- Šamanský buben jako vodoznak v pozadí -->
-    <div class="drum-watermark absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden" aria-hidden="true">
-      <img
-        src="/images/bigstock-shaman-drum-44041465.jpg"
-        alt=""
-        class="w-[480px] h-[480px] md:w-[600px] md:h-[600px] object-contain opacity-[0.055] dark:opacity-[0.03] dark:invert"
-      >
-    </div>
 
     <div class="relative max-w-5xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-12 md:gap-16 items-center">
@@ -41,12 +33,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <!-- Kruhový portrét -->
-        <div class="flex justify-center md:justify-end" transition:animate="fade">
-          <div class="portrait-wrapper relative">
-            <div class="portrait-ring ring-outer absolute rounded-full border border-ritual/25"></div>
-            <div class="portrait-ring ring-inner absolute rounded-full border border-copper/15"></div>
-            <div class="portrait-ring ring-dot absolute rounded-full border border-dashed border-sage/20"></div>
-            <div class="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-ritual/15 ring-2 ring-ritual/20">
+        <div class="overflow-hidden md:overflow-visible flex justify-center md:justify-end" transition:animate="fade">
+          <!-- Wrapper = velikost portrétu; buben + prsteny přetékají přes overflow:visible -->
+          <div class="portrait-wrapper relative w-52 h-52 md:w-64 md:h-64" style="overflow:visible">
+
+            <!-- Buben: centrován přes translate, přetéká mimo wrapper -->
+            <img
+              src="/images/bigstock-shaman-drum-44041465.jpg"
+              alt=""
+              aria-hidden="true"
+              class="drum-bg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-contain pointer-events-none select-none opacity-[0.05] dark:opacity-[0.15] dark:invert dark:[mix-blend-mode:screen]"
+              style="z-index:0"
+            >
+
+            <!-- Prsteny: vnější div centruje (translate), vnitřní div jen rotuje -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-[240px] h-[240px] md:w-[296px] md:h-[296px]" style="z-index:1">
+              <div class="ring-outer w-full h-full rounded-full border border-ritual/25"></div>
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-[272px] h-[272px] md:w-[328px] md:h-[328px]" style="z-index:1">
+              <div class="ring-inner w-full h-full rounded-full border border-copper/15"></div>
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none w-[312px] h-[312px] md:w-[368px] md:h-[368px]" style="z-index:1">
+              <div class="ring-dot w-full h-full rounded-full border border-dashed border-sage/20"></div>
+            </div>
+
+            <!-- Portrét: vyplňuje wrapper -->
+            <div class="w-full h-full rounded-full overflow-hidden shadow-2xl shadow-ritual/15 ring-2 ring-ritual/20" style="position:relative; z-index:2">
               <img
                 src="/images/portret-2025-07-16-125057.jpg"
                 alt="Jan Čejka — fotografie"
@@ -54,6 +66,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 loading="eager"
               >
             </div>
+
           </div>
         </div>
 
@@ -160,47 +173,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     line-height: 0.95;
   }
 
-  /* Dekorativní prsteny kolem portrétu */
-  .portrait-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Buben — rozměry v CSS, ne Tailwind arbitrary (spolehlivější v TW v4) */
+  .drum-bg {
+    width: 400px;
+    height: 400px;
+    max-width: none;
   }
 
-  .portrait-ring {
-    position: absolute;
-    border-radius: 50%;
+  @media (min-width: 768px) {
+    .drum-bg {
+      width: 480px;
+      height: 480px;
+      max-width: none;
+    }
   }
 
+  /* Prsteny — centering řeší flex wrapper, animace jen rotáčí */
   .ring-outer {
-    width: calc(100% + 2rem);
-    height: calc(100% + 2rem);
-    animation: slowSpin 28s linear infinite;
+    animation: slowSpinFwd 28s linear infinite;
   }
 
   .ring-inner {
-    width: calc(100% + 3.5rem);
-    height: calc(100% + 3.5rem);
-    animation: slowSpin 42s linear infinite reverse;
+    animation: slowSpinRev 42s linear infinite;
   }
 
   .ring-dot {
-    width: calc(100% + 5rem);
-    height: calc(100% + 5rem);
-    animation: slowSpin 60s linear infinite;
+    animation: slowSpinFwd 60s linear infinite;
   }
 
-  @keyframes slowSpin {
+  @keyframes slowSpinFwd {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
   }
 
-  /* Drum watermark — zarovnání do pravého rohu */
-  .drum-watermark {
-    right: -4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    align-items: center;
+  @keyframes slowSpinRev {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
   }
 </style>
