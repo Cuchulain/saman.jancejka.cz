@@ -25,23 +25,29 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
   description={`Osobní blog o šamanismu, léčení a práci s energií. Jan Čejka se věnuje léčitelství již ${new Date().getFullYear() - 1987} let a propojuje duchy přírodního světa s moderním myšlením.`}
   author="Jan Čejka"
 >
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-4xl mx-auto px-4 md:px-6">
     <section class="relative text-center py-[8vh] overflow-hidden" transition:animate="fade">
+
+      <h1 class="text-7xl mb-6 font-bold relative z-10 font-handwrite leading-tight">
+        <span class="block md:inline">šaman</span>
+        <span class="hidden md:inline mx-2 opacity-40">·</span>
+        <span class="block md:inline">léčitel</span>
+        <span class="hidden md:inline mx-2 opacity-40">·</span>
+        <span class="block md:inline">průvodce</span>
+      </h1>
 
       <!-- Šamanské srdce jako dekorativní pozadí -->
       <div class="hero-heart absolute pointer-events-none select-none" aria-hidden="true">
         <Image
           src={shamanicHeart}
           alt=""
-          class="w-[420px] h-[420px] md:w-[560px] md:h-[560px] object-contain opacity-[0.12] [mix-blend-mode:multiply] dark:opacity-[0.18] dark:invert dark:[mix-blend-mode:screen]"
+          class="w-[260px] h-[260px] md:w-[560px] md:h-[560px] object-contain opacity-[0.12] [mix-blend-mode:multiply] dark:opacity-[0.18] dark:invert dark:[mix-blend-mode:screen]"
           widths={[420, 560]}
           sizes="(max-width: 768px) 420px, 560px"
           quality={75}
           loading="eager"
         />
       </div>
-
-      <h1 class="text-7xl mb-8 font-bold relative z-10 font-handwrite leading-tight">šaman · léčitel · průvodce</h1>
       <p class="text-2xl text-muted-foreground max-w-3xl mx-auto mb-14 relative z-10">
         Průvodce světem šamanismu, energetického léčení a komunikace s přírodou. Věnuji se léčitelství již {new Date().getFullYear() - 1987} let a propojuji duchy přírodního světa s moderním myšlením.
       </p>
@@ -97,10 +103,16 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
 
 <style>
   .hero-heart {
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero-heart {
+      top: 50%;
+    }
   }
 </style>
 </BaseLayout>
