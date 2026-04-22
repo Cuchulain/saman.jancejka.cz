@@ -6,24 +6,89 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="O mně"
   description="Jan Čejka — léčitel, šaman a průvodce světem energie. Věnuji se léčitelství od svých 17 let."
   author="Jan Čejka"
+  image="/images/portret-2025-07-16-125057.jpg"
 >
-  <div class="max-w-3xl mx-auto">
-    <header class="mb-12 text-center" transition:animate="fade">
-      <h1 class="text-5xl mb-4">O mně</h1>
-      <p class="text-xl text-muted-foreground">
-        Léčitel, šaman, průvodce světem energie
-      </p>
-    </header>
+  <!-- ═══════════════════════════════════════════
+       HERO — portrét + úvod
+  ═══════════════════════════════════════════ -->
+  <section class="about-hero relative overflow-hidden py-16 md:py-24">
 
-    <div class="prose prose-lg dark:prose-invert max-w-none" transition:animate="fade">
-      <p>
-        Jmenuji se Jan Čejka a léčitelství se věnuji od svých 17 let. Narodil jsem se v roce 1971
-        a celý svůj život propojuji duchy přírodního světa s moderním myšlením — hledám mosty
-        mezi pradávnou moudrostí a každodenním životem.
-      </p>
+    <!-- Šamanský buben jako vodoznak v pozadí -->
+    <div class="drum-watermark absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden" aria-hidden="true">
+      <img
+        src="/images/bigstock-shaman-drum-44041465.jpg"
+        alt=""
+        class="w-[480px] h-[480px] md:w-[600px] md:h-[600px] object-contain opacity-[0.055] dark:opacity-[0.03] dark:invert"
+      >
+    </div>
 
+    <div class="relative max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-12 md:gap-16 items-center">
+
+        <!-- Text -->
+        <div transition:animate="fade">
+          <p class="text-ritual font-mono text-xs uppercase tracking-[0.25em] mb-5">Léčitel · Šaman · Průvodce</p>
+          <h1 class="about-title leading-none mb-6" style="margin-top:0;">Jan<br>Čejka</h1>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-lg mb-10">
+            Věnuji se léčitelství od svých 17 let. Narodil jsem se v roce 1971 a celý
+            svůj život propojuji duchy přírodního světa s moderním myšlením — hledám
+            mosty mezi pradávnou moudrostí a každodenním životem.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/journal" class="btn-primary no-underline hover:no-underline">Číst zápisník</a>
+            <a href="mailto:posta@jancejka.cz" class="btn-secondary no-underline hover:no-underline">Napsat mi</a>
+          </div>
+        </div>
+
+        <!-- Kruhový portrét -->
+        <div class="flex justify-center md:justify-end" transition:animate="fade">
+          <div class="portrait-wrapper relative">
+            <div class="portrait-ring ring-outer absolute rounded-full border border-ritual/25"></div>
+            <div class="portrait-ring ring-inner absolute rounded-full border border-copper/15"></div>
+            <div class="portrait-ring ring-dot absolute rounded-full border border-dashed border-sage/20"></div>
+            <div class="w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-ritual/15 ring-2 ring-ritual/20">
+              <img
+                src="/images/portret-2025-07-16-125057.jpg"
+                alt="Jan Čejka — fotografie"
+                class="w-full h-full object-cover object-center"
+                loading="eager"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DRAMATICKÝ BANNER — šaman s pochodní
+  ═══════════════════════════════════════════ -->
+  <div class="max-w-5xl mx-auto px-4 my-10 md:my-14" transition:animate="fade">
+    <div class="relative h-56 md:h-72 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
+      <img
+        src="/images/bigstock-Portrait-of-a-shaman-with-a-dr-58717124.jpg"
+        alt="Šaman s pochodní a peřím"
+        class="w-full h-full object-cover"
+        style="object-position: center 15%;"
+      >
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center">
+        <blockquote class="px-8 md:px-14 max-w-sm md:max-w-md">
+          <p class="text-xl md:text-2xl text-white font-medium leading-snug italic">
+            „Propojuji pradávnou moudrost<br>s moderním světem."
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       OBSAH — aktivity, publikace, kontakt
+  ═══════════════════════════════════════════ -->
+  <div class="max-w-3xl mx-auto px-4 pb-20" transition:animate="fade">
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
       <h2>Čím se zabývám</h2>
-
       <ul>
         <li>Šamanské praktiky, tradice a cesty</li>
         <li>Energetické léčení a práce s tělem i duší</li>
@@ -31,16 +96,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <li>Harmonizace a čištění prostor</li>
         <li>Síť světelných sloupů — energetická síť vyzařující uzdravení a lásku</li>
       </ul>
+    </div>
 
+    <!-- Publikace -->
+    <div class="my-10">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-mystic dark:text-mystic mb-8">Publikace</h2>
+      <div class="flex flex-col sm:flex-row gap-8 items-start sm:items-center p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800">
+        <div class="flex-shrink-0">
+          <img
+            src="/images/mvu-ctverec.jpg"
+            alt="Magie Vědomého Uzdravení — obálka"
+            class="w-36 h-36 object-cover rounded-xl shadow-lg"
+          >
+        </div>
+        <div>
+          <p class="font-mono text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Jan Čejka © 2014</p>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 leading-tight" style="margin-top:0;">Magie Vědomého Uzdravení</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-0">
+            Praktický průvodce vědomým uzdravením. Metody, jak se uzdravit za 21 dní bez léků
+            a lékaře — propojení šamanské moudrosti s moderním přístupem ke zdraví.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
       <h2>Zápisník</h2>
-
       <p>
         V tomto zápisníku sdílím zkušenosti, postřehy a příběhy z cesty léčitele.
         Pokud tě zajímá svět šamanismu a práce s energií, nahlédni do <a href="/journal">zápisníku</a>.
       </p>
 
       <h2>Kontakt</h2>
-
       <ul>
         <li>
           <strong>E-mail:</strong>{' '}
@@ -62,3 +149,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  /* Velký titul na stránce O mně — překrývá base h1 styly */
+  .about-title {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--color-ritual);
+    line-height: 0.95;
+  }
+
+  /* Dekorativní prsteny kolem portrétu */
+  .portrait-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portrait-ring {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .ring-outer {
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    animation: slowSpin 28s linear infinite;
+  }
+
+  .ring-inner {
+    width: calc(100% + 3.5rem);
+    height: calc(100% + 3.5rem);
+    animation: slowSpin 42s linear infinite reverse;
+  }
+
+  .ring-dot {
+    width: calc(100% + 5rem);
+    height: calc(100% + 5rem);
+    animation: slowSpin 60s linear infinite;
+  }
+
+  @keyframes slowSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* Drum watermark — zarovnání do pravého rohu */
+  .drum-watermark {
+    right: -4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    align-items: center;
+  }
+</style>

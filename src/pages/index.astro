@@ -23,12 +23,22 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
   author="Jan Čejka"
 >
   <div class="max-w-4xl mx-auto">
-    <section class="text-center py-[8vh]" transition:animate="fade">
-      <h1 class="text-7xl mb-8 font-bold">Šamanismus &amp; Léčení</h1>
-      <p class="text-2xl text-muted-foreground max-w-3xl mx-auto mb-14">
+    <section class="relative text-center py-[8vh] overflow-hidden" transition:animate="fade">
+
+      <!-- Šamanské srdce jako dekorativní pozadí -->
+      <div class="hero-heart absolute pointer-events-none select-none" aria-hidden="true">
+        <img
+          src="/images/bigstock-shamanic-heart-44039758.jpg"
+          alt=""
+          class="w-[420px] h-[420px] md:w-[560px] md:h-[560px] object-contain opacity-[0.07] dark:opacity-[0.04] dark:invert"
+        >
+      </div>
+
+      <h1 class="text-7xl mb-8 font-bold relative z-10">Šamanismus &amp; Léčení</h1>
+      <p class="text-2xl text-muted-foreground max-w-3xl mx-auto mb-14 relative z-10">
         Průvodce světem šamanismu, energetického léčení a komunikace s přírodou. Věnuji se léčitelství již {new Date().getFullYear() - 1987} let a propojuji duchy přírodního světa s moderním myšlením.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center">
+      <div class="flex flex-wrap gap-4 justify-center relative z-10">
         <a href="/journal" class="btn-primary btn-lg tracking-wide no-underline hover:no-underline transform transition-all duration-300 hover:scale-105 hover:shadow-[0_3.5rem_5rem_rgba(21,21,21,0.3)] shadow-[0_3rem_4rem_rgba(21,21,21,0.25)] dark:bg-white dark:text-black dark:hover:bg-gray-100">
           Číst zápisník
         </a>
@@ -47,5 +57,40 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
         </a>
       </div>
     </section>
+
+    <!-- Autorská karta -->
+    <section class="mt-20 mb-4" transition:animate="fade">
+      <a href="/about" class="group flex flex-col sm:flex-row items-center sm:items-start gap-6 p-7 rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40 hover:border-ritual/30 dark:hover:border-ritual/20 transition-all duration-300 no-underline hover:no-underline hover:shadow-md">
+        <div class="flex-shrink-0">
+          <div class="w-20 h-20 rounded-full overflow-hidden ring-2 ring-ritual/20 shadow-md group-hover:ring-ritual/40 transition-all duration-300">
+            <img
+              src="/images/profilovka.jpg"
+              alt="Jan Čejka"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            >
+          </div>
+        </div>
+        <div class="text-center sm:text-left">
+          <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-ritual mb-1">Autor</p>
+          <p class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1 group-hover:text-ritual transition-colors duration-300">Jan Čejka</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+            Léčitel a šaman věnující se své práci od 17 let. Propojuje pradávnou moudrost s moderním myšlením.
+          </p>
+        </div>
+        <div class="sm:ml-auto flex-shrink-0 self-center">
+          <span class="text-ritual text-xl group-hover:translate-x-1 inline-block transition-transform duration-300">→</span>
+        </div>
+      </a>
+    </section>
   </div>
+
+<style>
+  .hero-heart {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+</style>
 </BaseLayout>
