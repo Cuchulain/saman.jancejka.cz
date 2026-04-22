@@ -1,8 +1,20 @@
 ---
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import { getImage } from 'astro:assets';
 import DarkModeToggle from '../components/ui/DarkModeToggle.astro';
 import Analytics from '@vercel/analytics/astro';
+import profilovkaImg from '../assets/images/profilovka.jpg';
+
+const defaultOgImage = await getImage({
+  src: profilovkaImg,
+  width: 1200,
+  height: 630,
+  format: 'jpeg',
+  quality: 85,
+});
+// getImage().src je root-relativní (/_astro/…) nebo dev endpoint — převést na absolutní URL
+const defaultOgSrc = new URL(defaultOgImage.src, Astro.site ?? 'https://jancejka.cz').href;
 
 interface Props {
   title: string;
@@ -16,8 +28,8 @@ interface Props {
 
 const {
   title,
-  description = "A minimalist blog template focusing on clean typography and distraction-free reading experience.",
-  image = "/og-image.png",
+  description = "Osobní blog Jana Čejky o šamanismu, léčení a práci s energií.",
+  image = defaultOgSrc,
   type = "website",
   publishedDate,
   modifiedDate,
