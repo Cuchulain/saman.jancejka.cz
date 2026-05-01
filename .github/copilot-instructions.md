@@ -14,7 +14,7 @@ Osobní český blog o šamanismu, léčení a práci s energií. Autor se věnu
 
 Technický základ je Astro blog s Tailwind CSS v4, TypeScript, MDX a dark mode podporou.
 
-**Původní blog autora:** https://jancejka.cz — slouží jako zdroj témat, textů a kontextu pro obsah tohoto blogu.
+**Původní blog autora:** https://saman.jancejka.cz — slouží jako zdroj témat, textů a kontextu pro obsah tohoto blogu.
 
 ## Build & Development
 

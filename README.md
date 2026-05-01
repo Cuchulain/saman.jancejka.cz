@@ -2,7 +2,7 @@
 
 Osobní blog Jana Čejky o šamanismu, energetickém léčení a komunikaci s přírodou. Jan se věnuje léčitelství od svých 17 let (nar. 1971) a propojuje duchy přírodního světa s moderním myšlením.
 
-**Web:** [jancejka.cz](https://jancejka.cz)
+**Web:** [saman.jancejka.cz](https://saman.jancejka.cz)
 
 ## Témata
 
@@ -112,4 +112,4 @@ Utility třídy definované v `src/styles/global.css` (`@layer components`):
 
 ## 🚀 Nasazení
 
-Web je nasazen na GitHub Pages s vlastní doménou (`CNAME: jancejka.cz`). Astro generuje statický výstup — lze nasadit na libovolnou statickou platformu (GitHub Pages, Vercel, Netlify, Cloudflare Pages).
+Web je nasazen na GitHub Pages s vlastní doménou (`CNAME: saman.jancejka.cz`). Astro generuje statický výstup — lze nasadit na libovolnou statickou platformu (GitHub Pages, Vercel, Netlify, Cloudflare Pages).

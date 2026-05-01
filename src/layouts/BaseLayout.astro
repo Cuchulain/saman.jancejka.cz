@@ -14,7 +14,7 @@ const defaultOgImage = await getImage({
   quality: 85,
 });
 // getImage().src je root-relativní (/_astro/…) nebo dev endpoint — převést na absolutní URL
-const defaultOgSrc = new URL(defaultOgImage.src, Astro.site ?? 'https://jancejka.cz').href;
+const defaultOgSrc = new URL(defaultOgImage.src, Astro.site ?? 'https://saman.jancejka.cz').href;
 
 interface Props {
   title: string;
@@ -188,7 +188,7 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
       <footer class="max-w-4xl mx-auto py-8 border-t border-gray-200 dark:border-gray-800 mt-12">
           <div class="flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-sm text-gray-500 dark:text-gray-500">
-              Vytvořil  <a href="https://jancejka.cz" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 dark:hover:text-gray-100">Jan Čejka</a>
+              Vytvořil  <a href="https://saman.jancejka.cz" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 dark:hover:text-gray-100">Jan Čejka</a>
             </div>
             <nav class="flex items-center gap-4">
               <a href="/" class="nav-link-footer">Domů</a>

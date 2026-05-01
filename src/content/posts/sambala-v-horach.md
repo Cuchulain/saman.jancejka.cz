@@ -8,7 +8,7 @@ tags: [šamanismus, meditace, duchové, rituály]
 
 *Ze záznamu jednoho šamanského putování přes Dolní svět do Šambaly (30. června 2012)…*
 
-Více informací o putování si přečtěte na stránce [Tajemství šamanského bubnu](https://jancejka.cz/tajemstvi-samanskeho-bubnu/).
+Více informací o putování si přečtěte na stránce [Tajemství šamanského bubnu](https://saman.jancejka.cz/tajemstvi-samanskeho-bubnu/).
 
 ## Co se dělo?
 
