@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm uninstall *)",
+      "Bash(rtk read *)",
+      "Bash(pnpm --version)",
+      "Bash(rtk ls *)",
+      "Bash(rtk pnpm *)",
+      "Bash(pnpm approve-builds *)",
+      "Bash(pnpm rebuild *)",
+      "Bash(pnpm build *)",
+      "Bash(pnpm add *)",
+      "Bash(rtk find *)",
+      "Bash(node /Users/merlin/Projects/JanCejka/Astro/saman.jancejka.cz/node_modules/sharp/install/check.js)",
+      "Bash(node -e \"require\\('./node_modules/sharp/install/check.js'\\)\")",
+      "Bash(python3 -c \"import json,sys; p=json.load\\(sys.stdin\\); print\\(p.get\\('scripts', {}\\)\\)\")",
+      "Bash(node node_modules/sharp/install/check.js)",
+      "Bash(node node_modules/sharp/install/build.js)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(rtk grep *)",
+      "Bash(awk '/^snapshots:/,0' /Users/merlin/Projects/JanCejka/Astro/saman.jancejka.cz/pnpm-lock.yaml)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

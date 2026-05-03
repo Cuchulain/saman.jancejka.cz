@@ -3,7 +3,6 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { getImage } from 'astro:assets';
 import DarkModeToggle from '../components/ui/DarkModeToggle.astro';
-import Analytics from '@vercel/analytics/astro';
 import profilovkaImg from '../assets/images/saman-na-beltine.jpg';
 
 const defaultOgImage = await getImage({
@@ -272,6 +271,5 @@ const jsonLD = type === 'article' && jsonLDArticle ? jsonLDArticle : jsonLDWebsi
         initThemeToggle();
       });
     </script>
-    <Analytics />
   </body>
 </html>
