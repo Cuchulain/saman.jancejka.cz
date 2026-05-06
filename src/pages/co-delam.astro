@@ -12,7 +12,7 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
   author="Jan Čejka"
   image={ogImage.src}
 >
-  <div class="max-w-3xl mx-auto px-4 py-16 md:py-24">
+  <div class="max-w-3xl mx-auto px-4 py-8 md:py-14">
 
     <div transition:animate="fade">
       <p class="text-ritual font-mono text-xs uppercase tracking-[0.25em] mb-4">Moje práce · Projekty · Poslání</p>
@@ -28,7 +28,12 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
 
       <!-- Léčení -->
       <section class="activity-section">
-        <div class="activity-icon">✦</div>
+        <div class="activity-icon" aria-hidden="true">
+          <!-- Heart -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"/>
+          </svg>
+        </div>
         <div>
           <h2 class="activity-title">Léčení</h2>
           <p>
@@ -40,12 +45,35 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
             Každé sezení je jiné. Někdy jde o uvolnění starých vzorců, jindy o obnovení toku energie,
             posílení určitých aspektů nebo přímou komunikaci s tím, co v člověku volá po pozornosti.
           </p>
+          <p>
+            Léčení probíhá nejčastěně na dálku — vzdálenost nehraje žádnou roli. Osobní setkání
+            je možné, ale není podmínkou.
+          </p>
+          <p>
+            Před sezením se domluvíme na čase. V tu chvíli si dopřej klid — lehni si nebo pohodlně
+            sedni, pusť si příjemnou hudbu a nech se uvolnit. Čím méně napětí, tím snáze léčení
+            pronikne tam, kde je potřeba.
+          </p>
+          <p>
+            Po sezení dostaneš zpětnou vazbu, pokud se během práce objeví další informace. Někdy
+            léčení proběhne tiše — na energetické a fyzické úrovni — a slova nejsou potřeba.
+          </p>
+          <div class="price-box">
+            <p><strong>Cena: 1 800 Kč / sezení</strong></p>
+            <p>Osobní návštěva: cena dle dohody + cestovné.</p>
+          </div>
+          <a href="mailto:posta@jancejka.cz" class="price-cta">Napište mi →</a>
         </div>
       </section>
 
       <!-- Šamanské praktiky -->
       <section class="activity-section">
-        <div class="activity-icon">◯</div>
+        <div class="activity-icon" aria-hidden="true">
+          <!-- Sparkles -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a3.75 3.75 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a3.75 3.75 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clip-rule="evenodd"/>
+          </svg>
+        </div>
         <div>
           <h2 class="activity-title">Šamanské praktiky a tradice</h2>
           <p>
@@ -62,7 +90,13 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
 
       <!-- Harmonizace prostor -->
       <section class="activity-section">
-        <div class="activity-icon">⬡</div>
+        <div class="activity-icon" aria-hidden="true">
+          <!-- Home -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"/>
+            <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"/>
+          </svg>
+        </div>
         <div>
           <h2 class="activity-title" id="harmonizace">Harmonizace příbytků a prostor</h2>
           <p>
@@ -80,12 +114,33 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
             v dobrém vztahu. Budování těchto vztahů a osvěta kolem nich je přirozenou součástí
             harmonizace prostoru.
           </p>
+          <p>
+            Každý prostor je jiný. Před zahájením zjistím, co je potřeba — někdy vše proběhne v jedné
+            fázi, jindy se ukáže, že je třeba přinést konkrétní pomůcky nebo práci dokončit při další
+            návštěvě. O průběhu tě vždy předem informuji.
+          </p>
+          <div class="price-box">
+            <p><strong>Soukromé příbytky — první fáze od 2 500 Kč</strong></p>
+            <p>
+              <strong>Firemní prostory — první fáze od 5 000 Kč</strong><br />
+              Firemní prostory nesou energii mnoha lidí — zaměstnanců, klientů, příběhů i proměn.
+              Bývají proto energeticky vrstvené a náročnější na čištění než soukromý příbytek.
+              Cena tomu odpovídá.
+            </p>
+            <p>Další fáze a rozsah dle dohody.</p>
+          </div>
+          <a href="mailto:posta@jancejka.cz" class="price-cta">Napište mi →</a>
         </div>
       </section>
 
       <!-- Přírodní entity -->
       <section class="activity-section">
-        <div class="activity-icon">❧</div>
+        <div class="activity-icon" aria-hidden="true">
+          <!-- Map Pin (duchy míst) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-2.003 3.5-4.697 3.5-8.327a8.25 8.25 0 0 0-16.5 0c0 3.63 1.556 6.324 3.5 8.327a19.58 19.58 0 0 0 2.683 2.282 16.975 16.975 0 0 0 1.144.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd"/>
+          </svg>
+        </div>
         <div>
           <h2 class="activity-title">Komunikace s přírodními entitami a duchy míst</h2>
           <p>
@@ -102,7 +157,12 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
 
       <!-- Světelné sloupy -->
       <section class="activity-section">
-        <div class="activity-icon">▲</div>
+        <div class="activity-icon" aria-hidden="true">
+          <!-- Bolt / Lightning -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.818a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .845-.143Z" clip-rule="evenodd"/>
+          </svg>
+        </div>
         <div>
           <h2 class="activity-title">Síť světelných sloupů</h2>
           <p>
@@ -122,7 +182,13 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
 
       <!-- Vědomé uzdravení -->
       <section class="activity-section">
-        <div class="activity-icon">◈</div>
+        <div class="activity-icon" aria-hidden="true">
+          <!-- Eye (vědomí) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+            <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd"/>
+          </svg>
+        </div>
         <div>
           <h2 class="activity-title">Vědomé uzdravení</h2>
           <p>
@@ -156,17 +222,22 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
 <style>
   .activity-section {
     display: grid;
-    grid-template-columns: 2rem 1fr;
+    grid-template-columns: 2.25rem 1fr;
     gap: 0 1.5rem;
     align-items: start;
   }
 
   .activity-icon {
-    font-size: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
     color: var(--color-ritual);
-    margin-top: 0.35rem;
-    line-height: 1;
+    margin-top: 0.2rem;
     flex-shrink: 0;
+  }
+
+  .activity-icon svg {
+    width: 100%;
+    height: 100%;
   }
 
   .activity-title {
@@ -186,6 +257,47 @@ const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format
 
   :global(.dark) .activity-section p {
     color: rgb(156 163 175);
+  }
+
+  .price-box {
+    border-left: 3px solid var(--color-ritual);
+    background-color: color-mix(in srgb, var(--color-ritual) 6%, transparent);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.875rem 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .price-box p {
+    margin-bottom: 0.5rem;
+  }
+
+  .price-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  :global(.dark) .price-box {
+    background-color: color-mix(in srgb, var(--color-ritual) 10%, transparent);
+  }
+
+  .price-cta {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.6rem 1.4rem;
+    background-color: var(--color-ritual);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    box-shadow: 0 2px 10px -2px color-mix(in srgb, var(--color-ritual) 40%, transparent);
+  }
+
+  .price-cta:hover {
+    background-color: var(--color-copper);
+    box-shadow: 0 4px 16px -2px color-mix(in srgb, var(--color-ritual) 50%, transparent);
+    transform: translateY(-1px);
+    text-decoration: none;
   }
 
   .inline-link {
