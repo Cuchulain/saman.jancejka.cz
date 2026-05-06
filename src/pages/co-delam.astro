@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image, getImage } from 'astro:assets';
+import portrait from '../assets/images/profilovka-ctverec.png';
+
+const ogImage = await getImage({ src: portrait, width: 1200, height: 630, format: 'jpeg', quality: 90 });
+---
+
+<BaseLayout
+  title="Co dělám"
+  description="Léčení, šamanské praktiky, harmonizace prostor, komunikace s přírodními entitami a síť světelných sloupů — přehled mé práce."
+  author="Jan Čejka"
+  image={ogImage.src}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16 md:py-24">
+
+    <div transition:animate="fade">
+      <p class="text-ritual font-mono text-xs uppercase tracking-[0.25em] mb-4">Moje práce · Projekty · Poslání</p>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Co dělám</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-16 max-w-2xl">
+        Léčitelství a práce s energií jsou mou hlavní cestou od sedmnácti let.
+        Níže najdete přehled toho, čím se zabývám — od individuálního léčení přes harmonizaci prostor
+        až po projekty, které přesahují osobní rozměr.
+      </p>
+    </div>
+
+    <div class="space-y-16" transition:animate="fade">
+
+      <!-- Léčení -->
+      <section class="activity-section">
+        <div class="activity-icon">✦</div>
+        <div>
+          <h2 class="activity-title">Léčení</h2>
+          <p>
+            Pracuji s člověkem jako celkem — tělem, duší i energetickým polem. Léčení probíhá
+            na energetické rovině, kde se nalézají kořeny většiny obtíží, a výsledky se projevují
+            jak na úrovni energie, tak ve fyzickém těle.
+          </p>
+          <p>
+            Každé sezení je jiné. Někdy jde o uvolnění starých vzorců, jindy o obnovení toku energie,
+            posílení určitých aspektů nebo přímou komunikaci s tím, co v člověku volá po pozornosti.
+          </p>
+        </div>
+      </section>
+
+      <!-- Šamanské praktiky -->
+      <section class="activity-section">
+        <div class="activity-icon">◯</div>
+        <div>
+          <h2 class="activity-title">Šamanské praktiky a tradice</h2>
+          <p>
+            Šamanismus je pro mě živý způsob vnímání světa, ne historický artefakt. Pracuji
+            s tradičními metodami — bubnováním, cestováním do jiných rovin bytí, voláním pomocníků —
+            ale vždy v kontextu toho, co daná situace potřebuje tady a teď.
+          </p>
+          <p>
+            Šamanská praxe mi umožňuje vidět a ovlivňovat věci, které nejsou přístupné běžným smyslům.
+            Tento pohled propojuji s moderním myšlením a snahou o srozumitelný jazyk.
+          </p>
+        </div>
+      </section>
+
+      <!-- Harmonizace prostor -->
+      <section class="activity-section">
+        <div class="activity-icon">⬡</div>
+        <div>
+          <h2 class="activity-title" id="harmonizace">Harmonizace příbytků a prostor</h2>
+          <p>
+            Každý prostor, ve kterém žijeme nebo pracujeme, má svou energetickou historii.
+            Vrství se v něm vzpomínky, emoce, staré záměry — a ty mohou ovlivňovat nás, aniž bychom
+            si to uvědomovali.
+          </p>
+          <p>
+            Harmonizaci provádím na dálku i přímo na místě — obojí je plně funkční a záleží na vás,
+            co preferujete.
+          </p>
+          <p>
+            Součástí každého příbytku a jeho okolí jsou také různé energetické bytosti — genius loci,
+            strážci prahu, elementálové nebo přirození obyvatelé daného místa. Je dobré s nimi být
+            v dobrém vztahu. Budování těchto vztahů a osvěta kolem nich je přirozenou součástí
+            harmonizace prostoru.
+          </p>
+        </div>
+      </section>
+
+      <!-- Přírodní entity -->
+      <section class="activity-section">
+        <div class="activity-icon">❧</div>
+        <div>
+          <h2 class="activity-title">Komunikace s přírodními entitami a duchy míst</h2>
+          <p>
+            Krajina je živá. Každé místo má svůj charakter, paměť a vědomí — duchy lesů, vodních
+            toků, hor i konkrétních stromů nebo kamenů. Duchové míst jsou správci energetického
+            prostoru, se kterými lze navázat vztah a spolupráci.
+          </p>
+          <p>
+            Tato komunikace je součástí mé šamanské práce i harmonizací prostor. Naslouchat tomu,
+            co místo říká, je pro mě přirozenou součástí každé práce v krajině.
+          </p>
+        </div>
+      </section>
+
+      <!-- Světelné sloupy -->
+      <section class="activity-section">
+        <div class="activity-icon">▲</div>
+        <div>
+          <h2 class="activity-title">Síť světelných sloupů</h2>
+          <p>
+            Buduju energetickou síť sloupů — živých uzlů zakotvených v konkrétních místech krajiny
+            i zástavby. Každý sloup vyzařuje uzdravení, lásku, pohodu a sounáležitost do svého okolí.
+            Síť se postupně rozrůstá a má schopnost se sama replikovat tam, kde je to potřeba.
+          </p>
+          <p>
+            Jde o projekt, který přesahuje jednotlivé léčení. Je to trvalý příspěvek energetickému
+            zdraví míst, kde lidé žijí.
+          </p>
+          <p>
+            <a href="/mapa-sloupu" class="inline-link">Zobrazit mapu sítě →</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Vědomé uzdravení -->
+      <section class="activity-section">
+        <div class="activity-icon">◈</div>
+        <div>
+          <h2 class="activity-title">Vědomé uzdravení</h2>
+          <p>
+            Před lety jsem vyvinul originální léčebný postup, který nazývám <strong>Vědomé uzdravení</strong>.
+            Vychází z propojení šamanských metod s hlubokým porozuměním tomu, jak mysl, energie
+            a tělo spolupracují při uzdravování.
+          </p>
+          <p>
+            Postup je dokumentovaný, opakovatelný a přenosný — na rozdíl od mnoha duchovních metod
+            není závislý na víře, ale na záměru a vědomé spolupráci.
+          </p>
+          <p>
+            <a href="https://vedome-uzdraveni.cz" target="_blank" rel="noopener noreferrer" class="inline-link">
+              Více na vedome-uzdraveni.cz →
+            </a>
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-20 pt-10 border-t border-gray-200 dark:border-gray-800 flex flex-wrap gap-4" transition:animate="fade">
+      <a href="mailto:posta@jancejka.cz" class="btn-primary no-underline hover:no-underline">Napište mi</a>
+      <a href="/about" class="btn-secondary no-underline hover:no-underline">O mně</a>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .activity-section {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0 1.5rem;
+    align-items: start;
+  }
+
+  .activity-icon {
+    font-size: 1.25rem;
+    color: var(--color-ritual);
+    margin-top: 0.35rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .activity-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-mystic);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .activity-section p {
+    color: rgb(75 85 99);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.dark) .activity-section p {
+    color: rgb(156 163 175);
+  }
+
+  .inline-link {
+    color: var(--color-ritual);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .inline-link:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -1,32 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostList from '../components/PostList.astro';
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
 import shamanicHeart from '../assets/images/bigstock-shamanic-heart-44039758.jpg';
 import profilovka from '../assets/images/saman-na-beltine.jpg';
-
-// Get all blog posts and sort them by date
-const allPosts = await getCollection('posts');
-const sortedPosts = allPosts.sort((a, b) => {
-  return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
-});
-
-// Show up to 5 posts on the frontpage
-const posts = sortedPosts.slice(0, 5).map(post => ({
-  ...post,
-  url: `/posts/${post.id}`,
-  frontmatter: post.data
-}));
 ---
 
 <BaseLayout
   title="Jan Čejka"
-  description={`Osobní blog o šamanismu, léčení a práci s energií. Jan Čejka se věnuje léčitelství již ${new Date().getFullYear() - 1987} let a propojuje duchy přírodního světa s moderním myšlením.`}
+  description="Léčitel a šaman Jan Čejka — léčení, harmonizace prostor, síť světelných sloupů a originální metoda Vědomé uzdravení."
   author="Jan Čejka"
 >
   <div class="max-w-4xl mx-auto px-4 md:px-6">
-    <section class="relative text-center py-[8vh] overflow-hidden" transition:animate="fade">
+    <section class="relative text-center py-[8vh]" transition:animate="fade">
 
       <h1 class="text-7xl mb-6 font-bold relative z-10 font-handwrite leading-tight">
         <span class="block md:inline">šaman</span>
@@ -52,8 +37,8 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
         Průvodce světem šamanismu, energetického léčení a komunikace s přírodou. Věnuji se léčitelství již {new Date().getFullYear() - 1987} let a propojuji duchy přírodního světa s moderním myšlením.
       </p>
       <div class="flex flex-wrap gap-4 justify-center relative z-10">
-        <a href="/journal" class="btn-primary btn-lg tracking-wide no-underline hover:no-underline transform transition-all duration-300 hover:scale-105 hover:shadow-[0_3.5rem_5rem_rgba(21,21,21,0.3)] shadow-[0_3rem_4rem_rgba(21,21,21,0.25)]">
-          Číst zápisník
+        <a href="/co-delam" class="btn-primary btn-lg tracking-wide no-underline hover:no-underline transform transition-all duration-300 hover:scale-105 hover:shadow-[0_3.5rem_5rem_rgba(21,21,21,0.3)] shadow-[0_3rem_4rem_rgba(21,21,21,0.25)]">
+          Co dělám
         </a>
         <a href="/about" class="btn-secondary btn-lg tracking-wide no-underline hover:no-underline">
           O mně
@@ -61,14 +46,70 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
       </div>
     </section>
 
-    <section class="mx-auto" transition:animate="fade">
-      <PostList posts={posts} showImages={false} showExcerpt={false} showSeparators={true} showTags={false}/>
+    <!-- Sekce karty -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 mb-10" transition:animate="fade">
 
-      <div class="text-center mt-24">
-        <a href="/journal" class="text-lg font-medium text-black dark:text-white py-2 px-4 rounded-md inline-block focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 hover:underline">
-          Všechny příspěvky <span aria-hidden="true">→</span>
-        </a>
-      </div>
+      <a href="/co-delam#harmonizace" class="section-card group no-underline hover:no-underline">
+        <div class="section-card-icon">
+          <!-- Lucide: home (harmonizace) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="section-card-title">Harmonizace prostor</h2>
+          <p class="section-card-desc">Energetické čištění a harmonizace příbytků a prostor — na dálku i přímo na místě.</p>
+        </div>
+        <span class="section-card-arrow">→</span>
+      </a>
+
+      <a href="https://vedome-uzdraveni.cz" target="_blank" rel="noopener noreferrer" class="section-card group no-underline hover:no-underline">
+        <div class="section-card-icon">
+          <!-- Lucide: heart (vědomé uzdravení) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="section-card-title">Vědomé uzdravení</h2>
+          <p class="section-card-desc">Originální léčebný postup propojující šamanskou moudrost s vědomou spoluprací na uzdravení.</p>
+        </div>
+        <span class="section-card-arrow">↗</span>
+      </a>
+
+      <a href="/mapa-sloupu" class="section-card group no-underline hover:no-underline">
+        <div class="section-card-icon">
+          <!-- Lucide: map (mapa sítě) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+            <line x1="9" x2="9" y1="3" y2="18"/>
+            <line x1="15" x2="15" y1="6" y2="21"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="section-card-title">Síť světelných sloupů</h2>
+          <p class="section-card-desc">Energetická síť uzlů zakořeněných v krajině — interaktivní mapa aktuálního stavu.</p>
+        </div>
+        <span class="section-card-arrow">→</span>
+      </a>
+
+      <a href="/journal" class="section-card group no-underline hover:no-underline">
+        <div class="section-card-icon">
+          <!-- Lucide: feather (zápisník) -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+            <line x1="16" x2="2" y1="8" y2="22"/>
+            <line x1="17.5" x2="9" y1="15" y2="15"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="section-card-title">Zápisník</h2>
+          <p class="section-card-desc">Zkušenosti, postřehy a příběhy z cesty léčitele.</p>
+        </div>
+        <span class="section-card-arrow">→</span>
+      </a>
+
     </section>
 
     <!-- Autorská karta -->
@@ -107,12 +148,97 @@ const posts = sortedPosts.slice(0, 5).map(post => ({
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, black 45%, transparent 75%);
   }
 
   @media (min-width: 768px) {
     .hero-heart {
       top: 50%;
     }
+  }
+
+  .section-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(229 231 235);
+    background: rgb(249 250 251);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  :global(.dark) .section-card {
+    border-color: rgb(31 41 55);
+    background: rgb(17 24 39 / 0.4);
+  }
+
+  .section-card:hover {
+    border-color: color-mix(in srgb, var(--color-ritual) 40%, transparent);
+    box-shadow: 0 4px 20px -4px color-mix(in srgb, var(--color-ritual) 15%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .section-card-icon {
+    color: var(--color-ritual);
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .section-card-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .section-card > div {
+    flex: 1;
+  }
+
+  .section-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin: 0 0 0.35rem 0;
+    letter-spacing: -0.01em;
+  }
+
+  :global(.dark) .section-card-title {
+    color: rgb(243 244 246);
+  }
+
+  .section-card:hover .section-card-title {
+    color: var(--color-ritual);
+  }
+
+  .section-card-desc {
+    font-size: 0.875rem;
+    color: rgb(107 114 128);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  :global(.dark) .section-card-desc {
+    color: rgb(156 163 175);
+  }
+
+  .section-card-arrow {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.5rem;
+    font-size: 1rem;
+    color: var(--color-ritual);
+    opacity: 0.4;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .section-card:hover .section-card-arrow {
+    opacity: 1;
+    transform: translateX(3px);
   }
 </style>
 </BaseLayout>
