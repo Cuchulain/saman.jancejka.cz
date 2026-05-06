@@ -1,0 +1,33 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.254226,
+          49.877144
+        ]
+      },
+      "properties": {
+        "name": "svatá Maří Magdaléna",
+        "marker-color": "orange"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.254577,
+          49.877928
+        ]
+      },
+      "properties": {
+        "name": "Ruiny na Skalce",
+        "marker-color": "orange"
+      }
+    }
+  ]
+}

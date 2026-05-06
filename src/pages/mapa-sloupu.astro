@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mapa světelných sloupů"
+  description="Interaktivní mapa sítě světelných sloupů — energetická peer-to-peer síť vyzařující uzdravení, lásku a sounáležitost."
+  author="Jan Čejka"
+>
+  <div class="max-w-5xl mx-auto px-4 md:px-6 pb-16">
+
+    <header class="mb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Mapa světelných sloupů</h1>
+      <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+        Vizualizace energetické sítě v krajině. Zlaté body označují sloupy vytvořené záměrně,
+        fialové vznikly replikací sítě samotné.
+      </p>
+      <a href="/posts/sit-svetelnych-sloupu" class="inline-block mt-4 text-sm text-ritual hover:underline">
+        ← Co jsou světelné sloupy?
+      </a>
+    </header>
+
+    <!-- Legenda -->
+    <div class="flex flex-wrap gap-4 justify-center mb-4 text-sm">
+      <span class="flex items-center gap-2">
+        <span class="inline-block w-4 h-4 rounded-full bg-amber-500 border-2 border-amber-700"></span>
+        <span class="text-gray-700 dark:text-gray-300">Sloupy 1. úrovně — vytvořené záměrně</span>
+      </span>
+      <span class="flex items-center gap-2">
+        <span class="inline-block w-4 h-4 rounded-full bg-violet-500 border-2 border-violet-700"></span>
+        <span class="text-gray-700 dark:text-gray-300">Sloupy 2. úrovně — replikované sítí</span>
+      </span>
+    </div>
+
+    <!-- Mapa -->
+    <div
+      id="mapa"
+      class="w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-lg"
+      style="height: 560px;"
+      aria-label="Interaktivní mapa světelných sloupů"
+    ></div>
+
+    <p class="text-xs text-center text-gray-400 mt-3">
+      Podkladová mapa © <a href="https://www.openstreetmap.org/copyright" class="hover:underline" target="_blank" rel="noopener">OpenStreetMap</a> přispěvatelé
+    </p>
+
+  </div>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <script>
+    // Dynamicky načteme Leaflet až na klientu (SSR-safe)
+    async function initMapa() {
+      // @ts-ignore
+      const L = (await import('https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js')).default ?? (await import('https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js'));
+
+      const map = L.map('mapa', {
+        center: [49.8175, 15.473],
+        zoom: 7,
+        zoomControl: true,
+      });
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
+      }).addTo(map);
+
+      // Ikony
+      const ikonaL1 = L.divIcon({
+        className: '',
+        html: `<span style="
+          display:flex;align-items:center;justify-content:center;
+          width:28px;height:28px;border-radius:50%;
+          background:#f59e0b;border:2px solid #92400e;
+          box-shadow:0 0 8px rgba(245,158,11,0.7);
+          font-size:14px;line-height:1;
+        ">✦</span>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+        popupAnchor: [0, -16],
+      });
+
+      const ikonaL2 = L.divIcon({
+        className: '',
+        html: `<span style="
+          display:flex;align-items:center;justify-content:center;
+          width:22px;height:22px;border-radius:50%;
+          background:#8b5cf6;border:2px solid #4c1d95;
+          box-shadow:0 0 8px rgba(139,92,246,0.7);
+          font-size:11px;line-height:1;
+        ">✦</span>`,
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -13],
+      });
+
+      // Načítání GeoJSON vrstev
+      async function nactiVrstvu(url: string, ikona: L.DivIcon, nazevVrstvy: string) {
+        try {
+          const res = await fetch(url);
+          const data = await res.json();
+          return L.geoJSON(data, {
+            pointToLayer: (_feature, latlng) => L.marker(latlng, { icon: ikona }),
+            onEachFeature: (feature, layer) => {
+              const p = feature.properties ?? {};
+              const name = p.name ?? nazevVrstvy;
+              const popis = p.popis ? `<p class="text-sm text-gray-600 mt-1">${p.popis}</p>` : '';
+              const datum = p.datum ? `<p class="text-xs text-gray-400 mt-1">${p.datum}</p>` : '';
+              layer.bindPopup(`
+                <div style="min-width:160px">
+                  <strong>${name}</strong>
+                  ${popis}
+                  ${datum}
+                  <p class="text-xs text-gray-400 mt-1">${nazevVrstvy}</p>
+                </div>
+              `);
+            },
+          });
+        } catch (e) {
+          console.warn(`Nepodařilo se načíst vrstvu ${url}:`, e);
+          return L.geoJSON({ type: 'FeatureCollection', features: [] });
+        }
+      }
+
+      const [vrstva1, vrstva2] = await Promise.all([
+        nactiVrstvu('/data/sloupy-uroven-1.geojson', ikonaL1, 'Sloup 1. úrovně'),
+        nactiVrstvu('/data/sloupy-uroven-2.geojson', ikonaL2, 'Sloup 2. úrovně'),
+      ]);
+
+      vrstva1.addTo(map);
+      vrstva2.addTo(map);
+
+      // Layer control
+      L.control.layers(undefined, {
+        'Sloupy 1. úrovně': vrstva1,
+        'Sloupy 2. úrovně': vrstva2,
+      }, { collapsed: false }).addTo(map);
+
+      // Auto-zoom na obsah pokud jsou nějaká data
+      const vsechny = L.featureGroup([vrstva1, vrstva2]);
+      const bounds = vsechny.getBounds();
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [40, 40] });
+      }
+    }
+
+    // Spustit až po načtení DOM
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMapa);
+    } else {
+      initMapa();
+    }
+
+    // Reinit po Astro view transitions
+    document.addEventListener('astro:page-load', initMapa);
+  </script>
+</BaseLayout>

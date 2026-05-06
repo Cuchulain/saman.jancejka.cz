@@ -1,0 +1,259 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.441072,
+          49.838852
+        ]
+      },
+      "properties": {
+        "name": "Slepičkův vrch",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_13-_20250831_134535.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_13-_20250831_134535.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n31.8.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">392 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,0 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">313 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">1,8 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:30:36</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.442478,
+          49.841075
+        ]
+      },
+      "properties": {
+        "name": "Maják Gondoru",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_14-_20250831_140849.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_14-_20250831_140849.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n31.8.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">355 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,3 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">274 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">1,8 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:30:22</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.443843,
+          49.841928
+        ]
+      },
+      "properties": {
+        "name": "2025-08-31 14:24:27",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_14-_20250831_142427.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_14-_20250831_142427.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n31.8.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">328 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,4 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">286 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">1,7 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:31:27</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.445812,
+          49.842983
+        ]
+      },
+      "properties": {
+        "name": "Zadka",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_14-_20250831_144447.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-08-31_14-_20250831_144447.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n31.8.2025 14:44:46\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">318 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,2 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">350 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">2,3 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:32:34</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.456563,
+          49.831086
+        ]
+      },
+      "properties": {
+        "name": "Máj",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/1000490480.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/1000490480.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n10.8.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">448 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:22:56</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.944005,
+          43.61566
+        ]
+      },
+      "properties": {
+        "name": "Greben",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\n1.5.2023\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">268 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:36:42</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.927627,
+          43.571967
+        ]
+      },
+      "properties": {
+        "name": "Gospa od Loreta",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\n2024\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">150 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-08-31 17:36:42</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.03668,
+          49.39398
+        ]
+      },
+      "properties": {
+        "name": "Místo v srdci",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\n8.8.2025\n<!-- desc_user:end -->\n</td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Ulice</b></small></td><td align=\"center\" valign=\"center\">Kobylničky</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Město</b></small></td><td align=\"center\" valign=\"center\">Myslejovice</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Okres</b></small></td><td align=\"center\" valign=\"center\">okres Prostějov</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Země</b></small></td><td align=\"center\" valign=\"center\">Czech Republic</td></tr>\n<tr><td colspan=\"2\"><hr></td></tr></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.449535,
+          49.839849
+        ]
+      },
+      "properties": {
+        "name": "2025-09-05 19:05:44",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\n5.9.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">285 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-09-07 09:08:01</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.417334,
+          50.063495
+        ]
+      },
+      "properties": {
+        "name": "Vyšehrad",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\n2025-09-08\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">225 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-09-07 09:10:08</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.46753,
+          49.848202
+        ]
+      },
+      "properties": {
+        "name": "Nespory",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\nVedle Údolí Spory, 11.10.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">359 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-10-11 16:05:25</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Ulice</b></small></td><td align=\"center\" valign=\"center\">Krňany</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Město</b></small></td><td align=\"center\" valign=\"center\">Krňany</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Okres</b></small></td><td align=\"center\" valign=\"center\">okres Benešov</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Země</b></small></td><td align=\"center\" valign=\"center\">Czech Republic</td></tr>\n<tr><td colspan=\"2\"><hr></td></tr></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.445657,
+          49.853465
+        ]
+      },
+      "properties": {
+        "name": "2025-10-11 16:04:38",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">417 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,0 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">103 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">1,7 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-10-11 16:04:50</td></tr>\n</table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.48283,
+          49.886937
+        ]
+      },
+      "properties": {
+        "name": "Rozhledna Pepř",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-11-01_14-_20251101_141532.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-11-01_14-_20251101_141532.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n2025-11-01 14:15:31\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">447 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,0 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">228 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">1,5 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-11-01 14:16:10</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.432545,
+          49.891223
+        ]
+      },
+      "properties": {
+        "name": "Ďábel",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\"><a href=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-11-01_15-_20251101_151321.jpg\" target=\"_blank\"><img src=\"/storage/emulated/0/Android/data/menion.android.locus/files/Locus/data/media/photo/P_2025-11-01_15-_20251101_151321.jpg\" width=\"60px\" align=\"right\" style=\"border: 3px white solid;\"></a><br /><br />\n<!-- desc_user:start -->\n2025-11-01 15:13:20, geometrický střed Čech\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">397 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Rychlost</b></small></td><td align=\"center\" valign=\"center\">0,0 km/h</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Azimut</b></small></td><td align=\"center\" valign=\"center\">266 °</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Přesnost</b></small></td><td align=\"center\" valign=\"center\">1,6 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-11-01 15:14:34</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.109452,
+          49.66703
+        ]
+      },
+      "properties": {
+        "name": "Hotel Podlesí",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">680 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2026-01-04 10:06:42</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Ulice</b></small></td><td align=\"center\" valign=\"center\">Podlesí ev.15</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Město</b></small></td><td align=\"center\" valign=\"center\">Sněžné</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>PSČ</b></small></td><td align=\"center\" valign=\"center\">59203</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Země</b></small></td><td align=\"center\" valign=\"center\">Czech Republic</td></tr>\n<tr><td colspan=\"2\"><hr></td></tr></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.071693,
+          49.66075
+        ]
+      },
+      "properties": {
+        "name": "Sněžné",
+        "marker-color": "yellow",
+        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">791 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2026-01-04 10:10:01</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Město</b></small></td><td align=\"center\" valign=\"center\">Sněžné</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Země</b></small></td><td align=\"center\" valign=\"center\">Czech Republic</td></tr>\n<tr><td colspan=\"2\"><hr></td></tr></table></td></tr></table></font>\n<!-- desc_gen:end -->"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.252667,
+          49.879313
+        ]
+      },
+      "properties": {
+        "name": "Poustevna",
+        "marker-color": "yellow"
+      }
+    }
+  ]
+}
