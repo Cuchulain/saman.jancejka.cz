@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import umami from '@yeskunall/astro-umami';
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,6 +33,10 @@ export default defineConfig({
   },
   integrations: [
     mdx(),
-    sitemap()
+    sitemap(),
+    umami({
+        id: "393ab4f7-5fed-4c2f-bce1-16a03bc4317b",
+        endpointUrl: "https://analytics.rebma.cz"
+    })
   ]
 });
