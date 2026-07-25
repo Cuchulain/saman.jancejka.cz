@@ -126,21 +126,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          14.449535,
-          49.839849
-        ]
-      },
-      "properties": {
-        "name": "2025-09-05 19:05:44",
-        "marker-color": "#FFC800",
-        "description": "<!-- desc_gen:start -->\n<font color=\"#ff000000\"><table width=\"100%\"><tr><td width=\"100%\" align=\"center\">\n<!-- desc_user:start -->\n5.9.2025\n<!-- desc_user:end -->\n</td></tr><tr><td colspan=\"1\"><hr></td></tr><tr><td><table width=\"100%\"><tr><td align=\"left\" valign=\"center\"><small><b>Nad. výška</b></small></td><td align=\"center\" valign=\"center\">285 m</td></tr>\n<tr><td align=\"left\" valign=\"center\"><small><b>Vytvořeno</b></small></td><td align=\"center\" valign=\"center\">2025-09-07 09:08:01</td></tr>\n</table></td></tr><tr><td><table width=\"100%\"></table></td></tr></table></font>\n<!-- desc_gen:end -->"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           14.417334,
           50.063495
         ]
