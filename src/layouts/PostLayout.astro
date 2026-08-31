@@ -5,7 +5,7 @@ import { Image, getImage } from 'astro:assets';
 import { formatDate } from '../utils/date';
 
 const { frontmatter, headings, prevPost, nextPost } = Astro.props;
-const { title, date, tags, image, excerpt } = frontmatter;
+const { title, date, tags, image, imageAlt, excerpt } = frontmatter;
 const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
 
 const ogImage = image
@@ -57,7 +57,7 @@ const publishDate = new Date(date);
       <div class="max-w-4xl mx-auto mt-2 mb-10 feature-image" transition:name={`image-${slug}`}>
         <Image
           src={image}
-          alt={`Featured image for "${title}"`}
+          alt={imageAlt ?? `Úvodní obrázek k článku „${title}“`}
           class="w-full h-full object-cover"
           widths={[600, 900, 1200]}
           sizes="(max-width: 768px) 100vw, 1200px"
