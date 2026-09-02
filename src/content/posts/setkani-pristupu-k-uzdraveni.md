@@ -59,12 +59,12 @@ Vědomé uzdravení je způsob, jak se znovu stát aktivním účastníkem svéh
 
 Věda a šamanství nemluví stejným jazykem. Někdy si ani nekladou stejné otázky. Ale tam, kde obě cesty obracejí pozornost ke vztahu mezi zkušeností, prostředím, mozkem a tělem, vzniká prostor pro setkání. A právě v tomto prostoru může začít první vědomý krok ke změně.
 
-<aside class="article-cta" aria-labelledby="mira-cta-title">
+<aside class="article-cta" aria-labelledby="healing-cta-title">
   <p class="article-cta__eyebrow">Váš další krok</p>
-  <h2 id="mira-cta-title">Projděte 21denní cestu s Mirou</h2>
-  <p>Mira je AI průvodkyně Vědomým uzdravením. Pomůže vám převést záměr, vizualizaci a každodenní praxi do konkrétních kroků.</p>
-  <a class="article-cta__button" href="https://t.me/uSkyCzBot?start=UZDRA20" target="_blank" rel="noopener noreferrer">
-    Otevřít Miru v Telegramu
+  <h2 id="healing-cta-title">Poznejte Vědomé uzdravení</h2>
+  <p>Chcete se o tomto přístupu dozvědět více? Na webu Vědomého uzdravení najdete představení knihy Magie Vědomého Uzdravení a 21denního postupu pro práci s tělem, záměrem a vizualizací.</p>
+  <a class="article-cta__button" href="https://vedome-uzdraveni.cz" target="_blank" rel="noopener noreferrer">
+    Přejít na Vědomé uzdravení
     <span aria-hidden="true">↗</span>
     <span class="sr-only"> (otevře se v novém okně)</span>
   </a>
