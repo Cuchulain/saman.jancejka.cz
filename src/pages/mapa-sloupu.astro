@@ -12,25 +12,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <header class="mb-8 text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-3">Mapa světelných sloupů</h1>
       <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-        Vizualizace energetické sítě v krajině. Zlaté body označují sloupy vytvořené záměrně,
-        fialové vznikly replikací sítě samotné.
+        Vizualizace energetické sítě v krajině. Barvy rozlišují jednotlivé úrovně sloupů.
       </p>
       <a href="/posts/sit-svetelnych-sloupu" class="inline-block mt-4 text-sm text-ritual hover:underline">
         ← Co jsou světelné sloupy?
       </a>
     </header>
 
-    <!-- Legenda -->
-    <div class="flex flex-wrap gap-4 justify-center mb-4 text-sm">
-      <span class="flex items-center gap-2">
-        <span class="inline-block w-4 h-4 rounded-full bg-amber-500 border-2 border-amber-700"></span>
-        <span class="text-gray-700 dark:text-gray-300">Sloupy 1. úrovně — vytvořené záměrně</span>
-      </span>
-      <span class="flex items-center gap-2">
-        <span class="inline-block w-4 h-4 rounded-full bg-violet-500 border-2 border-violet-700"></span>
-        <span class="text-gray-700 dark:text-gray-300">Sloupy 2. úrovně — replikované sítí</span>
-      </span>
-    </div>
+    <!-- Legenda se vytvoří automaticky ze skupin v GPX souboru. -->
+    <div id="legenda-mapy" class="flex flex-wrap gap-4 justify-center mb-4 text-sm" aria-label="Legenda mapy"></div>
 
     <!-- Mapa -->
     <div
@@ -55,109 +45,167 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   />
 
   <script>
+    let instanceMapy: { remove: () => void } | undefined;
+    let poradiInicializace = 0;
+
+    const zalozniBarvy = [
+      '#f59e0b', '#8b5cf6', '#0ea5e9', '#10b981', '#ef4444',
+      '#ec4899', '#84cc16', '#f97316', '#6366f1', '#14b8a6',
+    ];
+
+    function textPrvku(prvek: Element, nazev: string) {
+      return Array.from(prvek.children)
+        .find((potomek) => potomek.localName === nazev)
+        ?.textContent?.trim() ?? '';
+    }
+
+    function textRozsireni(prvek: Element, nazev: string) {
+      return Array.from(prvek.getElementsByTagNameNS('*', nazev))[0]
+        ?.textContent?.trim() ?? '';
+    }
+
+    function textBezHtml(hodnota: string) {
+      return new DOMParser().parseFromString(hodnota, 'text/html').body.textContent?.trim() ?? '';
+    }
+
+    function escapujHtml(hodnota: string) {
+      return hodnota.replace(/[&<>'"]/g, (znak) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;',
+      })[znak] ?? znak);
+    }
+
+    function normalizujBarvu(hodnota: string) {
+      const barvy: Record<string, string> = {
+        black: '#111827', blue: '#2563eb', brown: '#92400e', darkyellow: '#a16207',
+        gray: '#6b7280', green: '#16a34a', lightblue: '#38bdf8', lightgreen: '#84cc16',
+        orange: '#f97316', purple: '#8b5cf6', red: '#ef4444', white: '#f9fafb', yellow: '#eab308',
+      };
+      const barva = hodnota.trim().toLowerCase();
+      if (/^#[0-9a-f]{6}$/.test(barva)) return barva;
+      // OsmAnd podporuje také Android zápis #AARRGGBB.
+      if (/^#[0-9a-f]{8}$/.test(barva)) return `#${barva.slice(3)}`;
+      return barvy[barva] ?? '';
+    }
+
+    function zalozniBarva(nazev: string) {
+      const hash = Array.from(nazev).reduce((soucet, znak) => ((soucet * 31) + znak.charCodeAt(0)) | 0, 0);
+      return zalozniBarvy[Math.abs(hash) % zalozniBarvy.length];
+    }
+
     // Dynamicky načteme Leaflet až na klientu (SSR-safe)
     async function initMapa() {
+      const poradi = ++poradiInicializace;
+      const kontejner = document.getElementById('mapa');
+      if (!kontejner) return;
+
       // @ts-ignore
       const L = (await import('https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js')).default ?? (await import('https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js'));
+      if (poradi !== poradiInicializace) return;
+
+      instanceMapy?.remove();
 
       const map = L.map('mapa', {
         center: [49.8175, 15.473],
         zoom: 7,
         zoomControl: true,
       });
+      instanceMapy = map;
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 19,
       }).addTo(map);
 
-      // Ikony
-      const ikonaL1 = L.divIcon({
-        className: '',
-        html: `<span style="
-          display:flex;align-items:center;justify-content:center;
-          width:28px;height:28px;border-radius:50%;
-          background:#f59e0b;border:2px solid #92400e;
-          box-shadow:0 0 8px rgba(245,158,11,0.7);
-          font-size:14px;line-height:1;
-        ">✦</span>`,
-        iconSize: [28, 28],
-        iconAnchor: [14, 14],
-        popupAnchor: [0, -16],
-      });
+      try {
+        const odpoved = await fetch('/data/sloupy.gpx');
+        if (!odpoved.ok) throw new Error(`HTTP ${odpoved.status}`);
 
-      const ikonaL2 = L.divIcon({
-        className: '',
-        html: `<span style="
-          display:flex;align-items:center;justify-content:center;
-          width:22px;height:22px;border-radius:50%;
-          background:#8b5cf6;border:2px solid #4c1d95;
-          box-shadow:0 0 8px rgba(139,92,246,0.7);
-          font-size:11px;line-height:1;
-        ">✦</span>`,
-        iconSize: [22, 22],
-        iconAnchor: [11, 11],
-        popupAnchor: [0, -13],
-      });
+        const obsahGpx = await odpoved.text();
+        if (poradi !== poradiInicializace) return;
 
-      // Načítání GeoJSON vrstev
-      async function nactiVrstvu(url: string, ikona: L.DivIcon, nazevVrstvy: string) {
-        try {
-          const res = await fetch(url);
-          const data = await res.json();
-          return L.geoJSON(data, {
-            pointToLayer: (_feature, latlng) => L.marker(latlng, { icon: ikona }),
-            onEachFeature: (feature, layer) => {
-              const p = feature.properties ?? {};
-              const name = p.name ?? nazevVrstvy;
-              const popis = p.popis ? `<p class="text-sm text-gray-600 mt-1">${p.popis}</p>` : '';
-              const datum = p.datum ? `<p class="text-xs text-gray-400 mt-1">${p.datum}</p>` : '';
-              layer.bindPopup(`
-                <div style="min-width:160px">
-                  <strong>${name}</strong>
-                  ${popis}
-                  ${datum}
-                  <p class="text-xs text-gray-400 mt-1">${nazevVrstvy}</p>
-                </div>
-              `);
-            },
-          });
-        } catch (e) {
-          console.warn(`Nepodařilo se načíst vrstvu ${url}:`, e);
-          return L.geoJSON({ type: 'FeatureCollection', features: [] });
+        const xml = new DOMParser().parseFromString(obsahGpx, 'application/xml');
+        if (xml.querySelector('parsererror')) throw new Error('Neplatný GPX soubor');
+
+        const nastaveniSkupin = new Map<string, string>();
+        for (const skupina of Array.from(xml.getElementsByTagName('group'))) {
+          const nazev = skupina.getAttribute('name')?.trim();
+          const barva = normalizujBarvu(skupina.getAttribute('color') ?? '');
+          if (nazev && barva) nastaveniSkupin.set(nazev, barva);
         }
-      }
 
-      const [vrstva1, vrstva2] = await Promise.all([
-        nactiVrstvu('/data/sloupy-uroven-1.geojson', ikonaL1, 'Sloup 1. úrovně'),
-        nactiVrstvu('/data/sloupy-uroven-2.geojson', ikonaL2, 'Sloup 2. úrovně'),
-      ]);
+        const vrstvy = new Map<string, { barva: string; vrstva: ReturnType<typeof L.featureGroup> }>();
+        const body = Array.from(xml.getElementsByTagNameNS('*', 'wpt'));
 
-      vrstva1.addTo(map);
-      vrstva2.addTo(map);
+        for (const bod of body) {
+          const lat = Number.parseFloat(bod.getAttribute('lat') ?? '');
+          const lon = Number.parseFloat(bod.getAttribute('lon') ?? '');
+          if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
 
-      // Layer control
-      L.control.layers(undefined, {
-        'Sloupy 1. úrovně': vrstva1,
-        'Sloupy 2. úrovně': vrstva2,
-      }, { collapsed: false }).addTo(map);
+          const skupina = textPrvku(bod, 'type') || 'Bez štítku';
+          const barvaBodu = normalizujBarvu(textRozsireni(bod, 'color'));
+          const barva = barvaBodu || nastaveniSkupin.get(skupina) || zalozniBarva(skupina);
 
-      // Auto-zoom na obsah pokud jsou nějaká data
-      const vsechny = L.featureGroup([vrstva1, vrstva2]);
-      const bounds = vsechny.getBounds();
-      if (bounds.isValid()) {
-        map.fitBounds(bounds, { padding: [40, 40] });
+          if (!vrstvy.has(skupina)) {
+            vrstvy.set(skupina, { barva, vrstva: L.featureGroup() });
+          }
+          const cilovaVrstva = vrstvy.get(skupina)!;
+
+          const ikona = L.divIcon({
+            className: '',
+            html: `<span style="display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:${barva};border:2px solid rgba(0,0,0,.4);box-shadow:0 0 8px ${barva};font-size:13px;line-height:1">✦</span>`,
+            iconSize: [26, 26],
+            iconAnchor: [13, 13],
+            popupAnchor: [0, -15],
+          });
+
+          const nazev = textPrvku(bod, 'name') || 'Světelný sloup';
+          const popis = textBezHtml(textPrvku(bod, 'desc'));
+          const cas = textPrvku(bod, 'time');
+          const marker = L.marker([lat, lon], { icon: ikona });
+          marker.bindPopup(`
+            <div style="min-width:160px">
+              <strong>${escapujHtml(nazev)}</strong>
+              ${popis ? `<p style="margin:.25rem 0 0">${escapujHtml(popis)}</p>` : ''}
+              ${cas ? `<p style="margin:.25rem 0 0;color:#9ca3af;font-size:.75rem">${escapujHtml(cas)}</p>` : ''}
+              <p style="margin:.25rem 0 0;color:#9ca3af;font-size:.75rem">${escapujHtml(skupina)}</p>
+            </div>
+          `);
+          marker.addTo(cilovaVrstva.vrstva);
+        }
+
+        const ovladaniVrstev: Record<string, ReturnType<typeof L.featureGroup>> = {};
+        const legenda = document.getElementById('legenda-mapy');
+        legenda?.replaceChildren();
+
+        for (const [nazev, { barva, vrstva }] of vrstvy) {
+          vrstva.addTo(map);
+          ovladaniVrstev[nazev] = vrstva;
+
+          const polozka = document.createElement('span');
+          polozka.className = 'flex items-center gap-2 text-gray-700 dark:text-gray-300';
+          const tecka = document.createElement('span');
+          tecka.className = 'inline-block w-4 h-4 rounded-full border-2 border-black/40';
+          tecka.style.backgroundColor = barva;
+          const text = document.createElement('span');
+          text.textContent = nazev;
+          polozka.append(tecka, text);
+          legenda?.append(polozka);
+        }
+
+        if (vrstvy.size > 0) {
+          L.control.layers(undefined, ovladaniVrstev, { collapsed: false }).addTo(map);
+          const bounds = L.featureGroup(Array.from(vrstvy.values(), ({ vrstva }) => vrstva)).getBounds();
+          if (bounds.isValid()) map.fitBounds(bounds, { padding: [40, 40] });
+        }
+      } catch (chyba) {
+        if (poradi !== poradiInicializace) return;
+        console.warn('Nepodařilo se načíst GPX data mapy:', chyba);
+        const legenda = document.getElementById('legenda-mapy');
+        if (legenda) legenda.textContent = 'Data mapy se nepodařilo načíst.';
       }
     }
 
-    // Spustit až po načtení DOM
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initMapa);
-    } else {
-      initMapa();
-    }
-
-    // Reinit po Astro view transitions
+    // Spuštění po prvním načtení i po navigaci přes Astro view transitions.
     document.addEventListener('astro:page-load', initMapa);
   </script>
 </BaseLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="saman.jancejka.cz"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:osmand="https://osmand.net"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Světelné sloupy</name>
+  </metadata>
+  <wpt lat="49.838852" lon="14.441072">
+    <name>Slepičkův vrch</name>
+    <desc>31.8.2025</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.841075" lon="14.442478">
+    <name>Maják Gondoru</name>
+    <desc>31.8.2025</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.841928" lon="14.443843">
+    <name>2025-08-31 14:24:27</name>
+    <desc>31.8.2025</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.842983" lon="14.445812">
+    <name>Zadka</name>
+    <desc>31.8.2025 14:44:46</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.831086" lon="14.456563">
+    <name>Máj</name>
+    <desc>10.8.2025</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.61566" lon="15.944005">
+    <name>Greben</name>
+    <desc>1.5.2023</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.571967" lon="15.927627">
+    <name>Gospa od Loreta</name>
+    <desc>2024</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.39398" lon="17.03668">
+    <name>Místo v srdci</name>
+    <desc>8.8.2025</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="50.063495" lon="14.417334">
+    <name>Vyšehrad</name>
+    <desc>2025-09-08</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.848202" lon="14.46753">
+    <name>Nespory</name>
+    <desc>Vedle Údolí Spory, 11.10.2025</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.853465" lon="14.445657">
+    <name>2025-10-11 16:04:38</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.886937" lon="14.48283">
+    <name>Rozhledna Pepř</name>
+    <desc>2025-11-01 14:15:31</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.891223" lon="14.432545">
+    <name>Ďábel</name>
+    <desc>2025-11-01 15:13:20, geometrický střed Čech</desc>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.66703" lon="16.109452">
+    <name>Hotel Podlesí</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.66075" lon="16.071693">
+    <name>Sněžné</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.879313" lon="14.252667">
+    <name>Poustevna</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.88254" lon="14.458205">
+    <name>Bohuliby</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.595627" lon="14.505132">
+    <name>Bod na mapě</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.586225" lon="15.919952">
+    <name>Plaža Rosi</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.584726" lon="15.92015">
+    <name>Crkva u Primoštenu</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.521647" lon="15.970888">
+    <name>Labirint od lavande</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.596119" lon="15.959199">
+    <name>Prhovo</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="43.57186" lon="15.991186">
+    <name>Vadalj, Primošten</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="45.002546" lon="15.69113">
+    <name>2026-07-04 11:50:00</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="46.421443" lon="15.852032">
+    <name>Vetrnica Zdravja, Ptuj</name>
+    <type>1. úroveň</type>
+  </wpt>
+  <wpt lat="49.877144" lon="14.254226">
+    <name>svatá Maří Magdaléna</name>
+    <type>2. úroveň</type>
+  </wpt>
+  <wpt lat="49.877928" lon="14.254577">
+    <name>Ruiny na Skalce</name>
+    <type>2. úroveň</type>
+  </wpt>
+  <extensions>
+    <osmand:points_groups>
+      <group name="1. úroveň" color="#f59e0b" icon="special_star" background="circle" />
+      <group name="2. úroveň" color="#8b5cf6" icon="special_star" background="circle" />
+    </osmand:points_groups>
+  </extensions>
+</gpx>
