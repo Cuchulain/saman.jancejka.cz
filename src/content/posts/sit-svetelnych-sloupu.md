@@ -33,7 +33,7 @@ Sloup druhé úrovně vznikne tam, kde síť sama vyhodnotí, že je to potřebn
 
 ## Jak to mapuji
 
-Sloupy první úrovně sleduji v telefonu — vím, kde jsou, jak vznikly a kdy. Sloupy druhé úrovně jsou obtížnější — vznikají samovolně a jejich přesný výčet není vždy v mé přímé vědomé evidenci.
+Sloupy první úrovně eviduji v telefonu — vím, kde jsou, jak vznikly a kdy. Sledovat sloupy druhé úrovně je obtížnější — vznikají samovolně a jejich přesný výčet není vždy v mé přímé vědomé evidenci.
 
 Vizualizaci aktuálního stavu sítě najdete na [mapě světelných sloupů](/mapa-sloupu).
 
